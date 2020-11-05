@@ -3,11 +3,10 @@ import './Home.scss'
 import ProviderSide from './ProviderSide'
 import SeekerSide from './SeekerSide'
 
+const Home = () => {
 
-function Home() {
   return (
     <div className="home">
-
       <div className="homeSeachSection" style={{width: '90%'}}> 
         <ProviderSide/>
         <SeekerSide/>

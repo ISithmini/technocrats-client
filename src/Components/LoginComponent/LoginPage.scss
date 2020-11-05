@@ -1,0 +1,68 @@
+$theme-blue: adjust-hue($color: #18A0FB, $degrees: 0) !important;
+$theme-light-blue: adjust-hue($color: #18a0fb67, $degrees: 0) !important;
+$theme-Light: adjust-hue($color: #ffffff, $degrees: 0) !important;
+$theme-text-light: adjust-hue($color: #ffffff, $degrees: 0) !important;
+$theme-text-dark: adjust-hue($color: #000000, $degrees: 0) !important;
+
+.LoginPage {
+  top: 50% !important;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+}
+
+.welcome {
+  text-align: center;
+  font-family: Montserrat-SemiBold;
+  font-size: 4em;
+  color: $theme-blue;
+}
+
+.welcomeText {
+  font-family: Montserrat-Reqular;
+  font-size: 1.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+.loginTitle {
+  font-family: Montserrat-SemiBold;
+  font-size: 4em;
+}
+
+.LoginForm {
+  padding-top: 5%;
+  padding-left: 6% !important;
+  padding-right: 6% !important;
+  padding-bottom: 4%;
+  border-radius: 2em;
+  margin: auto;
+}
+
+.Login-btn {
+  background-color: $theme-blue;
+  width: 8em;
+  font-family: Montserrat-SemiBold;
+  color: $theme-Light;
+  border-top: solid rgb(211, 207, 207) 0.5px !important;
+  border-bottom: solid rgb(211, 206, 206) 0.5px !important;
+}
+
+.LoginHr {
+  width: 40%;
+  float: left;
+  height: 2em;
+  
+}
+
+.LoginOr {
+  float: left;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1.5em;
+}
+
+.secBreak {
+  display: flex;
+  justify-content: center;
+}
