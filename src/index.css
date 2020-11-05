@@ -1,5 +1,17 @@
+@font-face {
+  font-family: 'Montserrat-Reqular';
+  src: url(./assets/fonts/montserrat/Montserrat-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url(./assets/fonts/montserrat/Montserrat-Bold.ttf) format('truetype');
+}
+
+
 body {
   margin: 0;
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
