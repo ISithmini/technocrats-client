@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import './LoginPage.scss'
+import { useSpring, animated, config } from 'react-spring';
 
 const Login = () => { 
-
+  const animprops1 = useSpring({
+    opacity: 1, transform: "translate3d(0%, 0 ,0)",  
+    from: {opacity: 0, transform: "translate3d(100%, 0 ,0)"}, 
+    config: config.slow
+  })
+  
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -12,13 +19,15 @@ const Login = () => {
   }
 
   return (
+    <animated.div style={animprops1}>
+
     <div className="LoginPage col-lg-6">
 
       <div className="greetingSection">
 
         <div className="welcome">Hi<br/>Welcome</div>
         <br/>
-
+        
         <div className="welcomeText" style={{textAlign:"center"}}>
           <p>Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco dolor proident.</p>
         </div>
@@ -45,7 +54,7 @@ const Login = () => {
               <hr className="LoginHr" />
             </div>
             
-            <form  onSubmit={(e) => {handleSubmit(e)}}>
+              <form  onSubmit={(e) => {handleSubmit(e)}}>
 
               <div className="form-group">
                 <input className="form-control" onChange={(e) => {setEmail(e.target.value)}} type='email' name='email' id='email' placeholder='Email Address' />
@@ -57,7 +66,7 @@ const Login = () => {
 
               <button  className="btn Login-btn">Login</button>
 
-            </form>
+              </form>
 
           </div>
 
@@ -65,6 +74,7 @@ const Login = () => {
 
       </div>
     </div>
+    </animated.div>
   )
 }
 

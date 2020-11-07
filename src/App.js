@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Components/LoginComponent/Login';
 import AuthContextProvider from './context/AuthContext';
+import CreateAccount from './Components/RegisterComponent/CreateAccount';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
           <Switch>
             <Route path='/' exact component={ Home }/>
             <Route path='/login' exact component={ Login }/>
+            <Route path='/register' exact component={ CreateAccount }/>
           </Switch>
         </AuthContextProvider>
       </BrowserRouter>
