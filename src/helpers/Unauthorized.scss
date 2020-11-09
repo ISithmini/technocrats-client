@@ -1,0 +1,27 @@
+.unauthorized {
+  
+}
+
+.unauthText {
+  padding-top: 1.5em;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba($color: #8f8d8d, $alpha: 1.0);
+  font-size: 4em;
+  font-family: Montserrat-SemiBold;
+}
+
+.lockImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+}
+
+@media only screen and (max-width: 600px) {
+  .lockImg {
+    width: 300px;
+  }
+}

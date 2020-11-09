@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import './LoginPage.scss'
 import { useSpring, animated, config } from 'react-spring';
 import { logIn } from '../../api/userApi/userApi';
+import { AuthContext } from '../../context/AuthContext';
 
 const Login = () => { 
+
   const animprops1 = useSpring({
     opacity: 1, transform: "translate3d(0%, 0 ,0)",  
     from: {opacity: 0, transform: "translate3d(100%, 0 ,0)"}, 
     config: config.slow
   })
   
-  
+  const { dispatch } = useContext(AuthContext)
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -23,6 +25,7 @@ const Login = () => {
     logIn({ email, password })
     .then(res => {
       console.log(res);
+      dispatch({ type: 'GET_USER' });
       history.push('/');
     })
     .catch(err => {

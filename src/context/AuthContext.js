@@ -1,4 +1,7 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useState } from 'react';
+import jwt_decode from 'jwt-decode';
+import Cookie from 'js-cookie';
+import { checkAccess } from '../helpers/authentication';
 
 export const AuthContext = createContext();
 
@@ -6,24 +9,33 @@ const AuthContextProvider = (props) => {
 
   const userReducer = (state, action) => {
     switch (action.type) {
-      case 'ADD_USER':
-        console.log('HERE');
+      case 'GET_USER':
+        let token = jwt_decode(Cookie.get('regdata'));
         return {
-          id: action.user.id,
-          name: action.user.name,
-          role: action.user.role,
-          privileges: action.user.privileges
+          id: token.id,
+          name: token.name,
+          role: token.role
         }
       case 'REMOVE_USER':
-        return ''
+        return action.user
       default:
-        return state
+        return token
     }
   }
 
-  const [user, dispatch] = useReducer(userReducer, 'hello');
-  console.log(user);
-
+  const [user, dispatch] = useReducer(userReducer,'', () => {
+    let token = Cookie.get('regdata');
+    if (token) {
+      let user = jwt_decode(token);
+      return {
+        id: user.id,
+        name: user.name,
+        role: user.role
+      } 
+    } else 
+    return '';
+    
+  });
   return (
     <AuthContext.Provider value={{user, dispatch}} >
       {props.children}

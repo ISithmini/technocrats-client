@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import './CreateAccount.scss'
 import { useSpring, animated, config } from 'react-spring';
@@ -7,6 +7,7 @@ import createAccountImg from '../../assets/images/video_tutorial__monochromatic 
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
 import { signUp } from '../../api/userApi/userApi';
+import { AuthContext } from '../../context/AuthContext';
 
 const CreateAccount = () => {
 
@@ -16,6 +17,7 @@ const CreateAccount = () => {
     config: config.slow
   });
 
+  const { dispatch } = useContext(AuthContext)
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [contactNo, setContactNo] = useState('');
@@ -57,6 +59,7 @@ const CreateAccount = () => {
       signUp({ name, email, contactNo, location, password })
       .then(result => {
         console.log(result);
+        dispatch({ type: 'GET_USER' });
         history.push('/');
       })
       .catch(err => {
