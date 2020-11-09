@@ -1,0 +1,72 @@
+.sidePanel {
+  position: relative;
+  top: 0;
+  left: 0;
+  border-left: solid 0.6em rgb(65, 65, 65);
+  border-right: solid 1px rgb(65, 65, 65);
+  width: 25em;
+  height: auto;
+  transition: 0.5s;
+}
+
+.Collapse-btn {
+  cursor: pointer;
+  background-color: rgba(17, 17, 17, 0);
+  color: white !important;
+  padding: 10px 15px;
+  border: none;
+  float: right;
+  border: solid adjust-hue($color: #757575, $degrees: 0) !important;
+  display: none !important;
+  margin-bottom: 2em;
+}
+
+.SideList {
+  padding: 1em;
+}
+
+.sideTile {
+  background-color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  border-radius: 0.1em;
+  font-family: Montserrat-SemiBold;
+  box-shadow: 0.6px 0.6px 10px #0000006e;
+  transition: 0.3s;
+  animation-name: sidepanelLoading;
+}
+
+.sideTile.active {
+  margin-right: 0; 
+  margin-left: 0;
+  box-shadow: 0 0 0 0;
+}
+
+.sideTile:hover {
+  box-shadow: 3px 3px 10px #0000006e;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+@media screen and (max-width: 900px) {
+  .sidePanel {
+    width: 100%;
+  }
+  .sidePanel.sidePanelhide {
+    left: -90%;
+    background: adjust-hue($color: #8a8a8a, $degrees: 0);
+  }
+  .sidePanel.sidePanelshow {
+    left: 0;
+    background: adjust-hue($color: #dddddd, $degrees: 0);
+  }
+  .Collapse-btn {
+    display: block !important;
+  }
+}
+

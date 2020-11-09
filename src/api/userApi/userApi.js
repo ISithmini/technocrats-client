@@ -10,3 +10,7 @@ export const signUp = ({ name, email, password, location, contactNo }) => {
 export const logIn = ({ email, password }) => {
   return api.post('/user/login', { email, password });
 }
+
+export const logOut = () => {
+  return api.get('/user/logout');
+} 
