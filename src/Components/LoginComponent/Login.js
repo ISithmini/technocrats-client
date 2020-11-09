@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
 import './LoginPage.scss'
 import { useSpring, animated, config } from 'react-spring';
+import { logIn } from '../../api/userApi/userApi';
 
 const Login = () => { 
   const animprops1 = useSpring({
@@ -12,10 +14,22 @@ const Login = () => {
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('')
+  const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(email)
+    logIn({ email, password })
+    .then(res => {
+      console.log(res);
+      history.push('/');
+    })
+    .catch(err => {
+      console.log(err.response);
+      setEmailError(err.response.data.errors.email);
+      setPasswordError(err.response.data.errors.password);
+    })
   }
 
   return (
@@ -57,11 +71,26 @@ const Login = () => {
               <form  onSubmit={(e) => {handleSubmit(e)}}>
 
               <div className="form-group">
-                <input className="form-control" onChange={(e) => {setEmail(e.target.value)}} type='email' name='email' id='email' placeholder='Email Address' />
+                <input 
+                  className="form-control" 
+                  onChange={(e) => {setEmail(e.target.value)}} 
+                  required={true} 
+                  type='email' name='email' id='email' 
+                  placeholder='Email Address' />
+                  <div className=" alert-danger" >
+                    { emailError }
+                  </div>
               </div>
 
               <div className="form-group">
-                <input className="form-control" onChange={(e) => {setPassword(e.target.value)}} type='password' name='password' id='password' placeholder='Enter Password' />
+                <input 
+                  className="form-control" 
+                  onChange={(e) => {setPassword(e.target.value)}} 
+                  type='password' name='password' id='password' 
+                  placeholder='Enter Password' />
+                  <div className=" alert-danger" >
+                    { passwordError }
+                  </div>
               </div>
 
               <button  className="btn Login-btn">Login</button>
