@@ -27,7 +27,7 @@ function App() {
                   {...props} 
                   Component={ Dashboard } 
                   path='dashboard' 
-                  resource='dashboard' permission='dashboardAccess'/>
+                  permissionCode='P0001'/>
               )}/>
             <Route path='/unauthorized' component={ Unauthorized }/>
           </Switch>
