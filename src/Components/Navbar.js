@@ -62,7 +62,7 @@ function Navbar() {
   }
 
   const renderDashboardButton = () => {
-    if (checkAccess({ resource: 'dashboard', permission: 'dashboardAccess' })) {
+    if (checkAccess('P0001')) {
       return (
         <Link className="nav-link" to="/dashboard">
           <span type="submit">{`Dashboard`}</span>

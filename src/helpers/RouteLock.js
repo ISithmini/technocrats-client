@@ -2,9 +2,9 @@ import React from 'react';
 import { Redirect } from 'react-router-dom'
 import { checkAccess } from './authentication'
 
-const RouteLock = ( { Component, resource, permission, path } ) => {
-  console.log(checkAccess({resource, permission}));
-  return checkAccess({resource, permission})? (
+const RouteLock = ( { Component, permissionCode, path } ) => {
+  console.log(checkAccess(permissionCode));
+  return checkAccess(permissionCode)? (
     <Component/>
   ) : (
     <Redirect to={{ pathname: `/unauthorized` }} />
