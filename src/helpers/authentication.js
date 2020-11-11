@@ -8,16 +8,25 @@ export const checkAccess = (code) => {
   
   if (token) {
     let user = jwt_decode(token);
-    let permissions = user.role.permissions
-    if (user && permissions.length) {
-      permissions.forEach(permission => {
-        if (permission === code) {
-          canAccess = true;
+
+    if (user.role) {
+      let permissions = user.role.permissions
+      if (permissions) {
+        if (user && permissions.length) {
+          permissions.forEach(permission => {
+            if (permission === code) {
+              canAccess = true;
+            }
+          });
+        } else {
+          return canAccess;
         }
-      });
+      } else {
+        return canAccess;
+      }
     } else {
       return canAccess;
-    }
+    } 
   } else {
     return canAccess;
   }

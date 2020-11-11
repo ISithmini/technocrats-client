@@ -1,0 +1,123 @@
+
+
+.RightSideContent {
+  box-shadow: 0.5px 0.5px 5px rgba($color: #00000013, $alpha: 0.5);
+  padding: 1em;
+  position: relative;
+  float: left;
+  width: 75vw;
+  padding: 1em;
+  top: 0;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 50vh;
+}
+
+.rolesTiles {
+  cursor: pointer;
+  position: relative;
+  font-family: Montserrat-Regular;
+  width: 10em;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  transition: 0.2s;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 0.2em;
+  background-color: rgba($color: #f3f3f3, $alpha: 1.0);
+  box-shadow: 0.5px 0.5px 5px rgba($color: #00000013, $alpha: 0.5);
+}
+
+.rolesTiles.Active {
+  background-color: rgba($color: #ffffff, $alpha: 1.0);
+  font-family: Montserrat-SemiBold;
+  box-shadow: none;
+  border-left: solid 0.8em rgba($color: #d8d8d8, $alpha: 1.0);
+  border-bottom: solid 0.1em rgba($color: #d8d8d8, $alpha: 1.0);
+  border-top: solid 0.1em rgba($color: #d8d8d8, $alpha: 1.0);
+}
+
+.rolesTiles:hover {
+  background-color: rgba($color: #eeeeee, $alpha: 1.0);
+} 
+
+.roleInput {
+  width: 25vw;
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 900px) {
+
+  .RightSideContent {
+    width: 98vw;
+  }
+
+  .roleInput {
+    width: 95vw;
+    margin-top: 1em;
+  }
+}
+
+.PermissionsList.gridView {
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  max-height: 30vh;
+  overflow: auto;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  position: relative;
+  display: block;
+  border-radius: 0.5em;
+  border: solid 1px rgba($color: #3ff567, $alpha: 1.0);
+  background-color: rgba($color: #ffffff, $alpha: 1.0);
+  box-shadow: 0.5px 0.5px 3px 0.5px rgba($color: #000000, $alpha: 0.5);
+}
+
+.permissionListTile {
+  font-family:  Montserrat-Regular;
+  font-size: 0.9em;
+  position: relative;
+  align-items: center;
+  border-bottom: solid 1px rgba($color: #d8d8d8, $alpha: 1.0);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  justify-content: space-between;
+  padding-right: 3em;
+}
+
+.permissionTileItem {
+  display: inline-block;
+}
+
+.PermissionsList.missingPermission {
+  border: solid 1px rgba($color: #fca994, $alpha: 1.0);
+}
+
+.closeIcon {
+  height: 1.2em;
+}
+
+div.permissionButton.permissionTileItem {
+  position: absolute;
+  right: 0.4em;
+  cursor: pointer;
+}
+
+.GrantedPermissionsSec {
+  margin-top: 1em;
+  border: solid 1px adjust-hue($color: #959595, $degrees: 0);
+  padding-bottom: 1em;
+  border-radius: 0.5em;
+  margin-bottom: 2em;
+}
+
+.GrantedPermissionsSecText {
+  padding-left: 1em;
+  font-family:  Montserrat-Regular;
+}

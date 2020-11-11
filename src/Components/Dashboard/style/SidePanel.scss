@@ -1,17 +1,18 @@
 .sidePanel {
   position: relative;
+  float: left;
   top: 0;
   left: 0;
   border-left: solid 0.6em rgb(65, 65, 65);
   border-right: solid 1px rgb(65, 65, 65);
-  width: 25em;
+  width: 25vw;
   height: auto;
   transition: 0.5s;
 }
 
 .Collapse-btn {
   cursor: pointer;
-  background-color: rgba(17, 17, 17, 0);
+  background-color: rgba(17, 17, 17, 0.733);
   color: white !important;
   padding: 10px 15px;
   border: none;
@@ -45,6 +46,7 @@
   margin-right: 0; 
   margin-left: 0;
   box-shadow: 0 0 0 0;
+ 
 }
 
 .sideTile:hover {
@@ -53,15 +55,31 @@
   margin-right: 0.5em;
 }
 
+.sideLink {
+  text-decoration: none;
+  color: adjust-hue($color: #363636, $degrees: 0);
+}
+
+.sideLink:hover {
+  text-decoration: none;
+}
+
+.sideLink.active {
+  color: rgb(83, 122, 248);
+}
+
 @media screen and (max-width: 900px) {
   .sidePanel {
     width: 100%;
   }
   .sidePanel.sidePanelhide {
+    position: absolute;
     left: -90%;
-    background: adjust-hue($color: #8a8a8a, $degrees: 0);
+    background: adjust-hue($color: #8a8a8a00, $degrees: 0);
   }
   .sidePanel.sidePanelshow {
+    z-index: 3;
+    position: absolute;
     left: 0;
     background: adjust-hue($color: #dddddd, $degrees: 0);
   }
