@@ -59,7 +59,6 @@ const RolestList = () => {
   const removePermission = (code) => {
     removePermissionFromRole({ role:selectedRole, code: code })
     .then(res => {
-      console.log('hellow');
       setChangeRoles(!changeRoles)
       console.log(changeRoles);
     })
@@ -72,20 +71,6 @@ const RolestList = () => {
       setChangeRoles(!changeRoles)
       console.log(changeRoles);
     })
-  }
-
-  const renderCloseButton = (code) => {
-    if (selectedRole !== 'Admin' && checkAccess('P0104')) {
-      return(
-        <div className="permissionButton permissionTileItem" onClick={() => {removePermission(code)}}>
-          <img className="closeIcon" alt="close" src={closeIcon} />
-        </div>
-      )
-    } else {
-      return(
-        <span></span>
-      )
-    }
   }
 
   return (
@@ -102,7 +87,12 @@ const RolestList = () => {
             )
           }) }
         </div>
-
+        <form>
+          <div className="form-group roleInput">
+            <input className="form-control" type="text" name="newRole" placeholder="Enter the Role Title" />
+            <button className="btn btn-secondary" >ADD ROLE</button>
+          </div>
+        </form>
       <div >
         <div className="GrantedPermissionsSec">
           <div className="GrantedPermissionsSecText" >Granted Permissions</div>
@@ -111,7 +101,11 @@ const RolestList = () => {
               return(
                 <div key={permission.code} className="permissionListTile">
                   <div className="permissionTileItem">{ `${permission.resource}:   ${permission.description}` }</div>
-                  { renderCloseButton(permission.code) }
+                  { (selectedRole !== 'Admin' && checkAccess('P0104') == true) &&
+                    <div className="permissionButton permissionTileItem" onClick={() => {removePermission(permission.code)}}>
+                      <img className="closeIcon" alt="close" src={closeIcon} />
+                    </div>
+                  }
                 </div>
               )
             }) }
@@ -125,9 +119,11 @@ const RolestList = () => {
               return(
                 <div key={permission.code} className="permissionListTile missingPermission">
                   <div className="permissionTileItem">{ `${permission.resource}:   ${permission.description}` }</div>
-                  <div className="permissionButton permissionTileItem" onClick={() => {addPermission(permission.code)}} >
-                    <img className="closeIcon" src={addIcon} />
-                  </div>
+                  { checkAccess('P0102') == true && 
+                      <div className="permissionButton permissionTileItem" onClick={() => {addPermission(permission.code)}} >
+                        <img className="closeIcon" src={addIcon} />
+                      </div>
+                  }
                 </div>
               )
             }) }
