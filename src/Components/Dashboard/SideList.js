@@ -4,9 +4,9 @@ import React, { useState } from 'react';
 const SideList = () => {
 
   const [SideItems, setSideItems] = useState([
-    { key: 1, title: 'Assign Roles and Privilages' },
-    { key: 2, title: 'Review Job Posts' },
-    { key: 3, title: 'Resolve Complains' },
+    { key: 1, title: 'Manage Role Permissions' },
+    { key: 2, title: 'Assign and Create Roles' },
+    { key: 3, title: 'Complains' },
     { key: 4, title: 'Control Privilages' },
     { key: 5, title: 'Control Privilages' },
   ]);
