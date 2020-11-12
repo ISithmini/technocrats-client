@@ -32,15 +32,17 @@ const SidePanel = () => {
             </NavLink>
           }
 
-          <NavLink className="sideLink" exact to={`${url}/`}>
-            <div className="sideTile">
-              <span>Assign and Create Roles</span>
-            </div>
-          </NavLink>
+          { checkAccess('P0105') == true && 
+            <NavLink className="sideLink" exact to={`${url}/manageUser`}>
+              <div className="sideTile">
+                <span>Assign Roles and Manage Users</span>
+              </div>
+            </NavLink>
+          }
 
           <NavLink className="sideLink" exact to={`${url}/`}>
             <div className="sideTile">
-              <span>Manage Role Permissions</span>
+              <span>Manage Job Posts</span>
             </div>
           </NavLink>
        

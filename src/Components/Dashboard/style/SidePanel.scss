@@ -13,7 +13,7 @@
 .Collapse-btn {
   cursor: pointer;
   background-color: rgba(17, 17, 17, 0.733);
-  color: white !important;
+  color: rgb(41, 41, 41) !important;
   padding: 10px 15px;
   border: none;
   float: right;
@@ -73,14 +73,17 @@
     width: 100%;
   }
   .sidePanel.sidePanelhide {
+    z-index: 3;
+    border-left: solid 0 rgb(65, 65, 65);
     position: absolute;
-    left: -90%;
-    background: adjust-hue($color: #8a8a8a00, $degrees: 0);
+    left: -95%;
+    top: 5vh;
+    background: adjust-hue($color: #8a8a8a73, $degrees: 0);
   }
   .sidePanel.sidePanelshow {
     z-index: 3;
-    position: absolute;
-    left: 0;
+    position: relative;
+    top: 0;
     background: adjust-hue($color: #dddddd, $degrees: 0);
   }
   .Collapse-btn {

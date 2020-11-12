@@ -1,0 +1,49 @@
+.ManageUserPageGrid {
+  display: grid;
+  grid-template-columns: 35vw 35vw;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.UserFindFormTitle {
+  font-family: Montserrat-Regular;
+}
+
+.UserFindFormItem {
+  display: inline-block !important;
+  max-width: 20vw;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  margin-top: 0em !important;
+}
+
+.toggleFindButton{
+  border: solid rgba($color: #4e4e4e, $alpha: 0.5) 1.5px !important;
+  color: rgba($color: #616161, $alpha: 1) !important;
+  background-color: rgba($color: #e6e6e6, $alpha: 0.2) !important;
+  border-radius: 0.2em;
+  font-family: Montserrat-SemiBold;
+  font-size: 0.9em;
+  padding-top: 0.3em;
+  padding-bottom: 0.2em;
+  margin-bottom: 2em;
+  transition: 0.3s;
+}
+
+.toggleFindButton:hover{
+  border: solid rgba($color: #a8a8a8, $alpha: 1) 1.5px !important;
+  background-color: rgba($color: #a8a8a8, $alpha: 1) !important;
+  color: rgba($color: #ffffff, $alpha: 1) !important;
+}
+
+.toggleFindButton:focus {
+  border: solid 1px rgba($color: #4e4e4e, $alpha: 0.5) !important;
+  outline: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .ManageUserPageGrid {
+    grid-template-columns: 90vw;
+  }
+}
