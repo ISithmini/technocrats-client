@@ -11,14 +11,14 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  min-height: 50vh;
+  min-height: 90vh;
 }
 
 .rolesTiles {
   cursor: pointer;
   position: relative;
   font-family: Montserrat-Regular;
-  width: 10em;
+  width: 13em;
   padding: 0.5em;
   margin-top: 0.5em;
   transition: 0.2s;
@@ -50,11 +50,13 @@
 @media screen and (max-width: 900px) {
 
   .RightSideContent {
+    position: relative;
+    float: left;
     width: 98vw;
   }
 
   .roleInput {
-    width: 95vw;
+    width: 93vw;
     margin-top: 1em;
   }
 }
@@ -64,7 +66,7 @@
   padding-left: 1em;
   padding-top: 1em;
   padding-bottom: 1em;
-  max-height: 30vh;
+  max-height: 40vh;
   overflow: auto;
   margin-left: 2em;
   margin-right: 2em;

@@ -12,6 +12,13 @@ export const createRole = ({ role }) => {
   return api.post('/role/add_role', { role });
 }
 
+//////////////////////////// DELETE A ROLE ////////////////////////////
+
+export const deleteRole = ({ role }) => {
+  return api.delete(`/role/delete_role/${role}`);
+}
+
+
 //////////////////////////// ADD A PERMISSION CODE TO ROLE ////////////////////////////
 
 export const addPermissionToRole = ({ role, code }) => {
