@@ -42,8 +42,96 @@
   outline: 0;
 }
 
+.toggleFindButton.EditDeleteButton {
+  background-color: rgba($color: #a8a8a8, $alpha: 1) !important;
+  color: rgba($color: #ffffff, $alpha: 1) !important;
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+
 @media screen and (max-width: 900px) {
   .ManageUserPageGrid {
     grid-template-columns: 90vw;
   }
 }
+
+////////////////////////// user Tile ///////////////////////////////
+
+.userTile {
+  border-radius: 0.6em !important;
+  padding: 1em;
+  font-family: Montserrat-Regular;
+  width: max-content;
+}
+
+.userTileGrid {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: auto;
+  grid-gap: 3em;
+}
+
+.userTileName {
+  font-family: Montserrat-SemiBold;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+
+.userStatusGrid {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-template-rows: auto;
+  grid-gap: 0.3em;
+}
+.userStatusGrid > div {
+  text-align: center;
+  border-radius: 0.4em;
+  font-size: 0.9em;
+  width: fit-content;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  margin-bottom: 1em;
+}
+
+.userTileRole {
+  border: solid rgba($color: #a8a8a8, $alpha: 1) 1.5px !important;
+}
+
+.userTileVerified {
+  border: solid rgba($color: #269205, $alpha: 1) 1.5px !important;
+  color: rgba($color: #269205, $alpha: 1);
+}
+
+.userTileNotVerified {
+  border: solid rgba($color: #818307, $alpha: 1) 1.5px !important;
+  color: rgba($color: #818307, $alpha: 1);
+}
+
+.userTileDissabled {
+  border: solid rgba($color: #ec3838, $alpha: 1) 1.5px !important;
+  color: rgba($color: #ec3838, $alpha: 1);
+}
+
+.EditByAdminSec {
+  padding: 1em;
+  background-color: rgba($color: #ebebeb, $alpha: 1);
+  border-bottom-left-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
+}
+
+.EditByAdminSecItem {
+  float: left;
+  display: inline;
+  margin-right: 1em;
+}
+
+.RoleSelect {
+  width: 10em !important;
+}
+
+.toggleFindButton.deleteYesNoButton {
+  margin-bottom: 0;
+  margin-right: 0.6em;
+  margin-top: 0.5em;
+}
+

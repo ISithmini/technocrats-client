@@ -21,7 +21,7 @@ const Dashboard = () => {
           {...props} 
           Component={ RolesPermissions } 
           path={`${url}/rolePermissions`} 
-          permissionCode='P0103'/>
+          permissionCode={['P0103', 'P0102']}/>
       )}/>
 
       <Route 
@@ -31,7 +31,7 @@ const Dashboard = () => {
           {...props} 
           Component={ ManageUser } 
           path={`${url}/manageUser`} 
-          permissionCode='P0105'/>
+          permissionCode={['P0105', 'P0201', 'P0202']}/>
       )}/>
         
       </div>

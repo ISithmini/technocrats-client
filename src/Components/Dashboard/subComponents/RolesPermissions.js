@@ -132,7 +132,7 @@ const RolestList = () => {
               return(
                 <div key={permission.code} className="permissionListTile">
                   <div className="permissionTileItem"><b>{`( ${permission.resource} ) ::`}</b>{` ${permission.description}` }</div>
-                  { (selectedRole !== 'Admin' && checkAccess('P0104') === true) &&
+                  { (selectedRole !== 'Admin' && checkAccess('P0102') === true) &&
                     <div className="permissionButton permissionTileItem" onClick={() => {removePermission(permission.code)}}>
                       <img className="closeIcon" alt="close" src={closeIcon} />
                     </div>
