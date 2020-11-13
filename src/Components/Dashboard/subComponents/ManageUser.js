@@ -83,6 +83,15 @@ const ManageUser = () => {
       })
   }
 
+  const protectAdmin = () => {
+    if (user.role !== 'Admin' || (authDetails.user.role.title === 'Admin' && user.role === 'Admin')) {
+      
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   return (
     <div className="ManageUser ManageUserPageGrid">
 
@@ -140,10 +149,10 @@ const ManageUser = () => {
               </div>
               <div className="item2">
                 <div className="userStatusGrid" >
-                  { ((checkAccess('P0201') || checkAccess('P0105') ) === true  && user._id !== authDetails.user.id && !toggleEdit) &&
+                  { ((checkAccess('P0201') || checkAccess('P0105') ) === true  && user._id !== authDetails.user.id && !toggleEdit && protectAdmin() === true) &&
                     <div className="item1"><button onClick={() => {setToggleEdit(true)}} className="toggleFindButton EditDeleteButton">EDIT</button></div>
                   }
-                  { (checkAccess('P0202') === true && user._id !== authDetails.user.id) &&
+                  { (checkAccess('P0202') === true && user._id !== authDetails.user.id && protectAdmin() === true) &&
                     <div className="item2"><button className="toggleFindButton EditDeleteButton" onClick={() => {setToggleDelete(true)}}>DELETE</button></div>
                   }
                 </div>
