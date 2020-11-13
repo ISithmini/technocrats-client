@@ -26,8 +26,7 @@ function App() {
                 <RouteLock 
                   {...props} 
                   Component={ Dashboard } 
-                  path='dashboard' 
-                  permissionCode='P0001'/>
+                  permissionCode={['P0001']}/>
               )}/>
             <Route path='/unauthorized' component={ Unauthorized }/>
           </Switch>

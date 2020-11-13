@@ -32,7 +32,7 @@ const SidePanel = () => {
             </NavLink>
           }
 
-          { checkAccess('P0105') == true && 
+          { (checkAccess('P0105') == true || checkAccess('P0201') == true || checkAccess('P0202')) && 
             <NavLink className="sideLink" exact to={`${url}/manageUser`}>
               <div className="sideTile">
                 <span>Assign Roles and Manage Users</span>
