@@ -1,7 +1,7 @@
-import React, { createContext, useReducer, useState } from 'react';
+import React, { createContext, useReducer } from 'react';
 import jwt_decode from 'jwt-decode';
 import Cookie from 'js-cookie';
-import { checkAccess } from '../helpers/authentication';
+//import { checkAccess } from '../helpers/authentication';
 
 export const AuthContext = createContext();
 

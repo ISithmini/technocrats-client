@@ -2,9 +2,10 @@ import React from 'react';
 import SidePanel from './SidePanel';
 import RolesPermissions from './subComponents/RolesPermissions';
 import './style/RightSideContent.scss'
-import { BrowserRouter, Route, useRouteMatch } from 'react-router-dom';
+import { Route, useRouteMatch } from 'react-router-dom';
 import RouteLock from '../../helpers/RouteLock';
 import ManageUser from './subComponents/ManageUser';
+import ManageCategories from './subComponents/ManageCategories';
 
 const Dashboard = () => {
 
@@ -14,13 +15,12 @@ const Dashboard = () => {
     <div>
       <SidePanel/>
       <div className="RightSideContent" >
+
       <Route 
         path={`${url}/rolePermissions`} 
         render = {props => (
         <RouteLock 
-          {...props} 
-          Component={ RolesPermissions } 
-          path={`${url}/rolePermissions`} 
+          {...props} Component={ RolesPermissions } 
           permissionCode={['P0103', 'P0102']}/>
       )}/>
 
@@ -28,10 +28,16 @@ const Dashboard = () => {
         path={`${url}/manageUser`} 
         render = {props => (
         <RouteLock 
-          {...props} 
-          Component={ ManageUser } 
-          path={`${url}/manageUser`} 
+          {...props} Component={ ManageUser } 
           permissionCode={['P0105', 'P0201', 'P0202']}/>
+      )}/>
+
+      <Route 
+        path={`${url}/manageCategories`} 
+        render = {props => (
+        <RouteLock 
+          {...props} Component={ ManageCategories } 
+          permissionCode={['P0301']}/>
       )}/>
         
       </div>

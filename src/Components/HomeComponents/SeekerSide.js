@@ -1,6 +1,6 @@
 import React from 'react'
 import seekerImg from '../../assets/images/innovation__monochromatic.png';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 
 function SeekerSide() {
 

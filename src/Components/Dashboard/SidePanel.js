@@ -1,6 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink, useRouteMatch } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 import { checkAccess } from '../../helpers/authentication';
+import avatarIcon from '../../assets/images/Avatar-Image.png'
+import { IoIosLock, IoMdPricetags } from "react-icons/io";
+import { FaUserLock } from "react-icons/fa"
 
 import './style/SidePanel.scss';
 
@@ -8,43 +12,50 @@ const SidePanel = () => {
 
   const { url } = useRouteMatch();
 
+  const { user } = useContext(AuthContext);
+
   const [showClicked, setShowClicked] = useState(false);
-  const [SideItems, setSideItems] = useState([
-    { key: 1, title: 'Manage Role Permissions', url: '/rolePermissions' },
-    { key: 2, title: 'Assign and Create Roles', url: '/' },
-    { key: 3, title: 'Complains', url: '/' },
-    { key: 4, title: 'Control Privilages', url: '/' },
-    { key: 5, title: 'Control Privilages', url: '/' },
-  ]);
 
 
 
   return (
     <div className={ showClicked? 'sidePanel sidePanelhide': 'sidePanel sidePanelshow'}>
       <button className="btn Collapse-btn" onClick={() => {setShowClicked(!showClicked)}}>☰</button>
-      <div className="SideList" >
       
-          { checkAccess('P0103') == true &&
-            <NavLink className="sideLink" to={`${url}/rolePermissions`}>
-              <div className="sideTile">
-                <span>Manage Role Permissions</span>
+      
+          
+            <div className="AccountInfo">
+              <img className="AccountPic" src={ avatarIcon } alt="Avatar" />
+              <div className="AccountName">
+                { user.name }
               </div>
-            </NavLink>
-          }
-
-          { (checkAccess('P0105') == true || checkAccess('P0201') == true || checkAccess('P0202')) && 
-            <NavLink className="sideLink" exact to={`${url}/manageUser`}>
-              <div className="sideTile">
-                <span>Assign Roles and Manage Users</span>
+              <div className="AccountRole">
+                {user.role.title}
               </div>
-            </NavLink>
-          }
-
-          <NavLink className="sideLink" exact to={`${url}/`}>
-            <div className="sideTile">
-              <span>Manage Job Posts</span>
             </div>
-          </NavLink>
+            <hr className="AccountInfoHr"/>
+          
+        <div className="SideList" onClick={() => {setShowClicked(!showClicked)}}>
+          { checkAccess('P0103') === true &&
+            <NavLink className="sideTile" exact to={`${url}/rolePermissions`}>
+              <IoIosLock className="sideTileIcon"/>
+              Manage Role Permissions
+            </NavLink>
+          }
+
+          { (checkAccess('P0105') === true || checkAccess('P0201') === true || checkAccess('P0202') === true) && 
+            <NavLink className="sideTile" exact to={`${url}/manageUser`}>
+              <FaUserLock className="sideTileIcon"/>
+              Assign Roles and Manage Users
+            </NavLink>
+          }
+
+          { checkAccess('P0301') === true &&
+            <NavLink className="sideTile" to={`${url}/manageCategories`}>
+              <IoMdPricetags className="sideTileIcon"/>
+               Job Categories and Skills
+            </NavLink>
+          }
        
     </div>
     </div>
