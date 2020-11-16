@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles/ProviderSide.scss';
 import providerImg from '../../assets/images/seo_monochromatic.png';
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 
 function ProviderSide() {
   const animprops = useSpring({opacity: 1, transform: "translate3d(0%, 0 ,0)",  from: {opacity: 0, transform: "translate3d(-50%, 0 ,0)"},  delay: 400})

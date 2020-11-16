@@ -1,19 +1,69 @@
-.sidePanel {
-  position: relative;
+$Lignt-Blue: rgb(160, 241, 246);
+$SidePanel-FontColor: adjust-hue($color: #bebebe, $degrees: 0);
+$SidePanel-Active-FontColor: adjust-hue($color: #cfcfcf, $degrees: 0);
+
+div.sidePanel {
+  border-radius: 0em;
+  position: sticky;
   float: left;
   top: 0;
-  left: 0;
-  border-left: solid 0.6em rgb(65, 65, 65);
-  border-right: solid 1px rgb(65, 65, 65);
-  width: 25vw;
-  height: auto;
+  background-color: #363636;
+  height: 95vh;
+  margin-left: 0vw;
+  margin-right: 0vw;
+  width: 20vw;
   transition: 0.5s;
+}
+
+.AccountInfo {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: $SidePanel-FontColor;
+  font-family: Montserrat-Regular;
+  padding-bottom: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  width: 24em;
+  //box-shadow: 0px 0px 4px rgb(153, 153, 153);
+}
+
+.AccountPic {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  border-radius: 50%;
+  height: 7em;
+}
+
+.AccountName {
+  font-family: Montserrat-SemiBold;
+}
+
+.AccountRole {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.3em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  width: max-content;
+  font-size: 0.8em;
+  border: solid $SidePanel-FontColor 1px;
+  border-radius: 0.5em;
+}
+.AccountInfoHr {
+  //border: solid $SidePanel-FontColor 0.1em;
+  background-color: $SidePanel-Active-FontColor;
+  width: 16vw;
+  margin-bottom: 2em;
 }
 
 .Collapse-btn {
   cursor: pointer;
   background-color: rgba(17, 17, 17, 0.733);
-  color: rgb(41, 41, 41) !important;
+  color: rgb(41, 41, 41) ;
   padding: 10px 15px;
   border: none;
   float: right;
@@ -23,71 +73,77 @@
 }
 
 .SideList {
-  padding: 1em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  width: 18vw;
+  box-shadow: 1px 1px 5px #0000004f;
+  //border-radius: 0.5em !important;
+  background-color: rgba(243, 243, 243, 0.459);
 }
 
 .sideTile {
-  background-color: white;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  padding-top: 0.6em;
-  padding-bottom: 0.6em;
+  color: rgb(71, 71, 71);
+  overflow: hidden;
+  display: block;
   padding-left: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
-  border-radius: 0.1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: solid  #363636 0.1em;
   font-family: Montserrat-SemiBold;
-  box-shadow: 0.6px 0.6px 10px #0000006e;
   transition: 0.3s;
-  animation-name: sidepanelLoading;
-}
-
-.sideTile.active {
-  margin-right: 0; 
-  margin-left: 0;
-  box-shadow: 0 0 0 0;
- 
 }
 
 .sideTile:hover {
-  box-shadow: 3px 3px 10px #0000006e;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-}
-
-.sideLink {
+  //border-left: solid 1em rgb(65, 65, 65);
+  background-color: rgb(100, 100, 100);
+  color: $SidePanel-FontColor;
   text-decoration: none;
-  color: adjust-hue($color: #363636, $degrees: 0);
+  margin-left: 0em;
+  margin-right: 0em;
+  z-index: 2;
 }
 
-.sideLink:hover {
-  text-decoration: none;
+.sideTile.active {
+  border-left: solid 1em rgb(65, 65, 65);
+  overflow: hidden;
+  //border-radius: 0.5em;
+  border-bottom-right-radius: 0em !important;
+  background-color:rgb(85, 85, 85);
+  color: $SidePanel-Active-FontColor;
 }
 
-.sideLink.active {
-  color: rgb(83, 122, 248);
+.sideTileIcon {
+  font-size: 1.2em;
+  margin-right: 1em;
 }
 
 @media screen and (max-width: 900px) {
-  .sidePanel {
+  .SideList {
+    width: 80vw;
+  }
+  div.sidePanel {
     width: 100%;
   }
-  .sidePanel.sidePanelhide {
+  div.sidePanel.sidePanelhide {
+    position: sticky;
+    top: 0;
     z-index: 3;
     border-left: solid 0 rgb(65, 65, 65);
-    position: absolute;
-    left: -95%;
+    height: 3em;
+    overflow: hidden;
     top: 5vh;
-    background: adjust-hue($color: #8a8a8a73, $degrees: 0);
+    //background: adjust-hue($color: #8a8a8a73, $degrees: 0);
   }
-  .sidePanel.sidePanelshow {
+  div.sidePanel.sidePanelshow {
     z-index: 3;
-    position: relative;
     top: 0;
-    background: adjust-hue($color: #dddddd, $degrees: 0);
+    background-color: #363636;
   }
-  .Collapse-btn {
+  .btn.Collapse-btn {
     display: block !important;
+    color: $SidePanel-Active-FontColor ;
   }
 }
 

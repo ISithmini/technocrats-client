@@ -1,0 +1,74 @@
+$Lignt-Blue: rgb(160, 241, 246);
+
+.ManageCategories {
+  padding: 1em;
+}
+
+.categoryList {
+  box-shadow: 1px 1px 6px #000000c2;
+ // border-radius: 1em;
+}
+
+.category {
+  border-top: solid rgb(170, 170, 170) 0.1em;
+  background-color: rgb(230, 230, 230);
+  font-family: Montserrat-SemiBold;
+  padding-left: 0.7em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  display: block;
+  cursor: pointer;
+}
+
+.category:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.categoryItem {
+  display: inline-flex;
+  margin-right: 1em;
+}
+
+.dropDownIcon {
+  font-size: 1.3em;
+  color: rgb(92, 92, 92);
+  transition: 0.5s 0s;
+}
+
+.dropDownIcon.selected {
+  transform: rotate(180deg);
+  color: rgba(92, 92, 92, 0);
+}
+
+.subCategory {
+  font-family: Montserrat-Regular;
+  font-size: 0.9em;
+  padding-left: 4.5em;
+}
+
+.subCategory:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+.addCategoryFormItem {
+  display: inline !important;
+  width: auto !important;
+  margin-right: 0.5em;
+}
+
+.addSubCategoryFormItem {
+  display: inline !important;
+  width: 15em !important;
+  margin-right: 0.5em;
+}
+
+.AddCategorySec {
+  margin-top: 1em;
+}
+
+.closeBtn {
+  float: right;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+

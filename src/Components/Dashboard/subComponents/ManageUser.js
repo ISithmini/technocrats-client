@@ -146,6 +146,7 @@ const ManageUser = () => {
                 </div>
                 <div className="userTileEmail">{ user.email }</div>
                 <div className="userTileContactNo">{ user.contactNo }</div>
+                <div className="userTileCreatedTime">{ `Created at: ${new Date(user.createdAt).toUTCString().replace(/GMT/, '')}` }</div>
               </div>
               <div className="item2">
                 <div className="userStatusGrid" >

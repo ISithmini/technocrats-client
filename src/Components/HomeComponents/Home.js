@@ -2,7 +2,7 @@ import React from 'react'
 import './styles/Home.scss'
 import ProviderSide from './ProviderSide'
 import SeekerSide from './SeekerSide'
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 
 const Home = () => {
   const animprops = useSpring({opacity: 1, transform: "translate3d(0%, 0 ,0) scale(1)",  from: {opacity: 0, transform: "translate3d(-50%, 0 ,0) scale(0.5)"}, config:{ mass: 2, tension: 100, friction: 26 }})
