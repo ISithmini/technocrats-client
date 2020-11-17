@@ -13,6 +13,7 @@ div.sidePanel {
   margin-right: 0vw;
   width: 20vw;
   transition: 0.5s;
+  padding-bottom: 0 !important;
 }
 
 .AccountInfo {
@@ -62,14 +63,27 @@ div.sidePanel {
 
 .Collapse-btn {
   cursor: pointer;
-  background-color: rgba(17, 17, 17, 0.733);
-  color: rgb(41, 41, 41) ;
-  padding: 10px 15px;
+  right: 0;
+  position: absolute;
+  font-size: 1.4em !important;
+  background-color: transparent;
+  padding: 6px 8px !important;
   border: none;
-  float: right;
-  border: solid adjust-hue($color: #757575, $degrees: 0) !important;
+  border: solid adjust-hue($color: #757575, $degrees: 0) 0 !important;
   display: none !important;
   margin-bottom: 2em;
+  transition: 0.5s;
+  top: 90vh;
+  transform: rotate(180deg);
+}
+
+.Collapse-btn.hide {
+  transform: rotate(0deg);
+}
+
+.Collapse-btn:focus {
+  border: solid 0px rgba($color: #979797, $alpha: 0.5) !important;
+  outline: 0;
 }
 
 .SideList {
@@ -78,13 +92,13 @@ div.sidePanel {
   margin-right: auto;
   margin-top: 1em;
   width: 18vw;
-  box-shadow: 1px 1px 5px #0000004f;
+  //box-shadow: 1px 1px 5px #0000004f;
   //border-radius: 0.5em !important;
-  background-color: rgba(243, 243, 243, 0.459);
+  background-color: rgba(65, 65, 65, 0.479);
 }
 
 .sideTile {
-  color: rgb(71, 71, 71);
+  color: rgb(195, 195, 195);
   overflow: hidden;
   display: block;
   padding-left: 1em;
@@ -110,7 +124,7 @@ div.sidePanel {
   overflow: hidden;
   //border-radius: 0.5em;
   border-bottom-right-radius: 0em !important;
-  background-color:rgb(85, 85, 85);
+  background-color:rgb(1, 109, 182);
   color: $SidePanel-Active-FontColor;
 }
 
@@ -141,9 +155,10 @@ div.sidePanel {
     top: 0;
     background-color: #363636;
   }
-  .btn.Collapse-btn {
+  .Collapse-btn {
     display: block !important;
     color: $SidePanel-Active-FontColor ;
+    top: 0;
   }
 }
 

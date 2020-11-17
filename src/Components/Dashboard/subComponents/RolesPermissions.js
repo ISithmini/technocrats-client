@@ -118,10 +118,10 @@ const RolestList = () => {
         </div>
         { checkAccess('P0101') === true && 
           <form onSubmit={(e) => {addRole(e)}} >
-            <div className="form-group roleInput">
-              <input className="form-control" onChange={(e) => {setNewRole(e.target.value)}} type="text" name="newRole" placeholder="Enter the Role Title" />
-              <button className="btn btn-secondary" >ADD ROLE</button>
-            </div>
+            
+              <input className="form-control roleInputItem" onChange={(e) => {setNewRole(e.target.value)}} type="text" name="newRole" placeholder="Enter the Role Title" />
+              <button className="toggleFindButton roleInputItem" >ADD ROLE</button>
+           
           </form>
         }
       <div >

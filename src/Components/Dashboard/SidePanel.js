@@ -3,7 +3,7 @@ import { NavLink, useRouteMatch } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import { checkAccess } from '../../helpers/authentication';
 import avatarIcon from '../../assets/images/Avatar-Image.png'
-import { IoIosLock, IoMdPricetags } from "react-icons/io";
+import { IoIosLock, IoMdPricetags, IoIosArrowDown } from "react-icons/io";
 import { FaUserLock } from "react-icons/fa"
 
 import './style/SidePanel.scss';
@@ -20,7 +20,7 @@ const SidePanel = () => {
 
   return (
     <div className={ showClicked? 'sidePanel sidePanelhide': 'sidePanel sidePanelshow'}>
-      <button className="btn Collapse-btn" onClick={() => {setShowClicked(!showClicked)}}>☰</button>
+      <button className={showClicked? "Collapse-btn hide": "Collapse-btn"} onClick={() => {setShowClicked(!showClicked)}}><IoIosArrowDown/></button>
       
       
           
