@@ -4,24 +4,36 @@ $Lignt-Blue: rgb(160, 241, 246);
   padding: 1em;
 }
 
+.ManageCategoriesTitle {
+  font-family: Montserrat-SemiBold;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
 .categoryList {
-  box-shadow: 1px 1px 6px #000000c2;
- // border-radius: 1em;
+  background-color: #ffffff;
+  padding-left: 1em;
+  padding-right: 1em;
+  overflow: hidden;
+  //border: solid rgb(204, 204, 204) 0.12em;
+  //border-radius: 1em;
 }
 
 .category {
-  border-top: solid rgb(170, 170, 170) 0.1em;
-  background-color: rgb(230, 230, 230);
+  border-top: solid rgb(216, 216, 216) 0.1em;
+  background-color: rgb(253, 253, 253);
+  color: rgb(92, 92, 92);
+ // background-image: linear-gradient( #ffffff,rgb(240, 240, 240),rgb(224, 224, 224) );
   font-family: Montserrat-SemiBold;
-  padding-left: 0.7em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-left: 0em;
+  padding-top: 0.8em;
+  padding-bottom: 0em;
   display: block;
   cursor: pointer;
 }
 
 .category:hover {
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(245, 245, 245);
 }
 
 .categoryItem {
@@ -30,6 +42,7 @@ $Lignt-Blue: rgb(160, 241, 246);
 }
 
 .dropDownIcon {
+  margin-left: 0.5em;
   font-size: 1.3em;
   color: rgb(92, 92, 92);
   transition: 0.5s 0s;
@@ -40,14 +53,35 @@ $Lignt-Blue: rgb(160, 241, 246);
   color: rgba(92, 92, 92, 0);
 }
 
+div.subCategorySec {
+  margin-top: 0.6em;
+  background-color: rgb(245, 245, 245);
+  height: 0;
+  transition:0.5s ;
+  overflow: hidden;
+}
+
+div.subCategorySec.show {
+  height: min-content;
+}
+
+
 .subCategory {
   font-family: Montserrat-Regular;
   font-size: 0.9em;
   padding-left: 4.5em;
+  //background-color: rgb(255, 255, 255);
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
 }
 
 .subCategory:hover {
   background-color: rgb(250, 250, 250);
+}
+
+.subCategory.InputForm {
+  margin-top: 1em;
+  height: fit-content;
 }
 
 .addCategoryFormItem {

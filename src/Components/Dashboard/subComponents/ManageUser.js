@@ -151,10 +151,10 @@ const ManageUser = () => {
               <div className="item2">
                 <div className="userStatusGrid" >
                   { ((checkAccess('P0201') || checkAccess('P0105') ) === true  && user._id !== authDetails.user.id && !toggleEdit && protectAdmin() === true) &&
-                    <div className="item1"><button onClick={() => {setToggleEdit(true)}} className="toggleFindButton EditDeleteButton">EDIT</button></div>
+                    <div className="item1"><button onClick={() => {setToggleEdit(true)}} className="toggleFindButton ">EDIT</button></div>
                   }
                   { (checkAccess('P0202') === true && user._id !== authDetails.user.id && protectAdmin() === true) &&
-                    <div className="item2"><button className="toggleFindButton EditDeleteButton" onClick={() => {setToggleDelete(true)}}>DELETE</button></div>
+                    <div className="item2"><button className="toggleFindButton" onClick={() => {setToggleDelete(true)}}>DELETE</button></div>
                   }
                 </div>
               </div>
