@@ -45,7 +45,14 @@ const ManageCategories = () => {
   
   return (
     <div className="ManageCategories" >
-      <div className="ManageCategoriesTitle" >Categories</div>
+
+      <div className="AddCategorySec">
+        <form onSubmit={addCategory}>
+          <input className="form-control addCategoryFormItem" onChange={(e) => setnewCategory(e.target.value)} type="text" placeholder="Enter a new Category"/>
+          <button className="toggleFindButton addCategoryFormItem">Add Category</button>
+        </form>
+      </div>
+
       <div className="categoryList">
         {
           categories.map(category => {
@@ -79,13 +86,6 @@ const ManageCategories = () => {
             )
           })
         }
-      </div>
-
-      <div className="AddCategorySec">
-        <form onSubmit={addCategory}>
-          <input className="form-control addCategoryFormItem" onChange={(e) => setnewCategory(e.target.value)} type="text" placeholder="Enter a new Category"/>
-          <button className="toggleFindButton addCategoryFormItem">ADD CATEGORY</button>
-        </form>
       </div>
 
     </div>

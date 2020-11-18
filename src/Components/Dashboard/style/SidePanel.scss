@@ -3,6 +3,7 @@ $SidePanel-FontColor: adjust-hue($color: #bebebe, $degrees: 0);
 $SidePanel-Active-FontColor: adjust-hue($color: #cfcfcf, $degrees: 0);
 
 div.sidePanel {
+  //margin-top: 3em;
   border-radius: 0em;
   position: sticky;
   float: left;
@@ -92,8 +93,6 @@ div.sidePanel {
   margin-right: auto;
   margin-top: 1em;
   width: 18vw;
-  //box-shadow: 1px 1px 5px #0000004f;
-  //border-radius: 0.5em !important;
   background-color: rgba(65, 65, 65, 0.479);
 }
 
@@ -110,7 +109,6 @@ div.sidePanel {
 }
 
 .sideTile:hover {
-  //border-left: solid 1em rgb(65, 65, 65);
   background-color: rgb(100, 100, 100);
   color: $SidePanel-FontColor;
   text-decoration: none;
@@ -122,7 +120,6 @@ div.sidePanel {
 .sideTile.active {
   border-left: solid 1em rgb(65, 65, 65);
   overflow: hidden;
-  //border-radius: 0.5em;
   border-bottom-right-radius: 0em !important;
   background-color:rgb(1, 109, 182);
   color: $SidePanel-Active-FontColor;
@@ -148,7 +145,6 @@ div.sidePanel {
     height: 3em;
     overflow: hidden;
     top: 5vh;
-    //background: adjust-hue($color: #8a8a8a73, $degrees: 0);
   }
   div.sidePanel.sidePanelshow {
     z-index: 3;

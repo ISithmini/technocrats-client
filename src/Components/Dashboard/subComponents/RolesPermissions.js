@@ -6,6 +6,7 @@ import closeIcon from '../../../assets/icons/closeIcon.png'
 import addIcon from '../../../assets/icons/addIcon.png'
 import trashBin from '../../../assets/icons/trashbin1.png'
 import { checkAccess } from '../../../helpers/authentication';
+import { GrAdd, GrSubtract } from "react-icons/gr";
 
 const RolestList = () => {
 
@@ -134,7 +135,7 @@ const RolestList = () => {
                   <div className="permissionTileItem"><b>{`( ${permission.resource} ) ::`}</b>{` ${permission.description}` }</div>
                   { (selectedRole !== 'Admin' && checkAccess('P0102') === true) &&
                     <div className="permissionButton permissionTileItem" onClick={() => {removePermission(permission.code)}}>
-                      <img className="closeIcon" alt="close" src={closeIcon} />
+                      <GrSubtract/>
                     </div>
                   }
                 </div>
@@ -152,7 +153,7 @@ const RolestList = () => {
                   <div className="permissionTileItem"><b>{`( ${permission.resource} ) ::`}</b>{` ${permission.description}` }</div>
                   { checkAccess('P0102') === true && 
                       <div className="permissionButton permissionTileItem" onClick={() => {addPermission(permission.code)}} >
-                        <img className="closeIcon" src={addIcon} alt="trashbin"/>
+                        <GrAdd />
                       </div>
                   }
                 </div>
