@@ -1,6 +1,7 @@
 $Lignt-Blue: rgb(160, 241, 246);
 
 .RightSideContent {
+  padding-top: 2em !important;
   box-shadow: 0.5px 0.5px 5px rgba($color: #00000013, $alpha: 0.5);
   background-color: rgb(233, 233, 233);
   padding: 1em;
@@ -19,7 +20,7 @@ $Lignt-Blue: rgb(160, 241, 246);
   cursor: pointer;
   position: relative;
   font-family: Montserrat-Regular;
-  width: 13em;
+  //width: 13em;
   padding: 0.5em;
   margin-top: 0em;
   transition: 0.2s;
@@ -31,7 +32,7 @@ $Lignt-Blue: rgb(160, 241, 246);
 }
 
 .rolesTiles.Active {
-  background-color: rgba($color: #ffffff, $alpha: 1.0);
+  background-color: rgba($color: #eeeeee, $alpha: 1.0);;
   font-family: Montserrat-SemiBold;
   box-shadow: none;
   border-left: solid 0.8em rgba($color: #d8d8d8, $alpha: 1.0);
@@ -40,7 +41,7 @@ $Lignt-Blue: rgb(160, 241, 246);
 }
 
 .rolesTiles:hover {
-  background-color: rgba($color: #eeeeee, $alpha: 1.0);
+  background-color: rgba($color: #f3f3f3, $alpha: 1.0);
 } 
 
 .roleInput {
@@ -127,10 +128,12 @@ $Lignt-Blue: rgb(160, 241, 246);
 }
 
 div.permissionButton.permissionTileItem {
+  font-size: 1em;
   position: absolute;
   right: 0.4em;
   cursor: pointer;
 }
+
 
 .GrantedPermissionsSec {
   margin-top: 1em;

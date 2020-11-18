@@ -5,7 +5,7 @@ import './style/RightSideContent.scss'
 import { Route, useRouteMatch } from 'react-router-dom';
 import RouteLock from '../../helpers/RouteLock';
 import ManageUser from './subComponents/ManageUser';
-import ManageCategories from './subComponents/ManageCategories';
+import Categories from './subComponents/Categories';
 
 const Dashboard = () => {
 
@@ -36,7 +36,7 @@ const Dashboard = () => {
         path={`${url}/manageCategories`} 
         render = {props => (
         <RouteLock 
-          {...props} Component={ ManageCategories } 
+          {...props} Component={ Categories } 
           permissionCode={['P0301']}/>
       )}/>
         
