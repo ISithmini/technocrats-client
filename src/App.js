@@ -8,6 +8,7 @@ import CreateAccount from './Components/RegisterComponent/CreateAccount';
 import RouteLock from './helpers/RouteLock';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Unauthorized from './helpers/Unauthorized';
+import JobSearch from './Components/FindJobs/JobSearch';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' exact component={ Home }/>
             <Route path='/login' exact component={ Login }/>
             <Route path='/register' exact component={ CreateAccount }/>
+            <Route path='/jobs' exact component={ JobSearch }/>
             <Route 
               path='/dashboard' 
               render = {props => (

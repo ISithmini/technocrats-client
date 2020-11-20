@@ -5,6 +5,8 @@ import { deleteUserByAdmin, editUserByAdmin, findUserAdm } from '../../../api/us
 import { getRoles } from '../../../api/roleApi/roleApi';
 import { checkAccess } from '../../../helpers/authentication';
 import { AuthContext } from '../../../context/AuthContext';
+import SkeletonJobPost from '../../Skeleton/SkeletonJobPost';
+import SkeletonUserTile from '../../Skeleton/SkeletonUserTile';
 
 const ManageUser = () => {
 
@@ -23,6 +25,7 @@ const ManageUser = () => {
   const [formRole, setformRole] = useState('');
   const [formVerifyStatus, setformVerifyStatus] = useState(false);
   const [formIsDissable, setformIsDissable] = useState(false);
+  const [finding, setfinding] = useState(false);
 
   useEffect(() => {
     setformRole(user.role);
@@ -31,6 +34,7 @@ const ManageUser = () => {
   }, [user, roles])
 
   const findUser = (e) => {
+    setfinding(true);
     e.preventDefault();
     setToggleEdit(false);
     findUserAdm({ email, contactNo })
@@ -39,6 +43,7 @@ const ManageUser = () => {
       getRoles()
       .then(res => {
         setRoles(res.data.roles);
+        setfinding(false);
         e.target.reset();
       })
       setUserFound(true)
@@ -46,6 +51,7 @@ const ManageUser = () => {
     .catch(err => {
       console.log(err.response);
       setNotFoundError(err.response.data.error);
+      setfinding(false)
       setUserFound(false);
     })
   }
@@ -70,16 +76,19 @@ const ManageUser = () => {
   }
 
   const getUser = () => {
+    setfinding(true)
     setToggleEdit(false);
       findUserAdm({ email, contactNo })
       .then(res => {
         setUser(res.data);
+        setfinding(false)
         setUserFound(true)
       })
       .catch(err => {
         console.log(err.response);
         setNotFoundError(err.response.data.error);
         setUserFound(false);
+        setfinding(false);
       })
   }
 
@@ -210,10 +219,9 @@ const ManageUser = () => {
             }
           </div>
         }
-        { (!userFound === true && notFoundError === '') && 
-          <div className="item4 card">
-            <div>No User found yet...</div>
-          </div>
+        { (finding === true && notFoundError === '') && 
+          
+          <SkeletonUserTile type="smWidth" />
         }
 
         { (!userFound === true && notFoundError !== '') && 
