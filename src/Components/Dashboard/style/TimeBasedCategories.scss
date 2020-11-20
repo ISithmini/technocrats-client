@@ -1,0 +1,75 @@
+
+.TimeBasedCategories {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  margin: 1em;
+  padding-bottom: 1em;
+}
+
+.AddtimeCategoryForm {
+  margin-bottom: 1em;
+}
+
+.AddtimeCategoryForm.edit {
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  background-color: rgb(248, 248, 248);
+}
+
+.deleteTimeCategoryMsg {
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  background-color: rgb(248, 248, 248);
+}
+
+.inputField {
+  width: 90% !important;
+  margin-bottom: 1em;
+}
+
+.inputButton {
+  margin-left: 0.5em;
+}
+
+
+.timeCategoryItem {
+  border-top: solid rgb(197, 197, 197) 0.08em;
+  margin-bottom: 1em;
+}
+
+.timeCategoryItemHead {
+  padding-left: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: rgb(255, 255, 255);
+  font-family: Montserrat-SemiBold;
+  font-size: 0.9em;
+}
+
+.headItem {
+  display: inline-block;
+}
+
+.headItem.icon {
+  color: rgb(116, 116, 116);
+  float: right;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+.timeCategoryItemDescription {
+  background-color: rgb(248, 248, 248);
+  padding: 0.5em;
+  padding-left: 0.5em;
+  font-family: Montserrat-Light;
+  font-size: 0.9em;
+}
+
+@media screen and (max-width: 900px) {
+  .TimeBasedCategories {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 1em;
+    padding-bottom: 1em;
+  }
+}

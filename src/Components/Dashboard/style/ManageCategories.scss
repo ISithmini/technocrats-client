@@ -9,13 +9,14 @@ $Lignt-Blue: rgb(160, 241, 246);
 }
 
 .categoryList {
-  background-color: #ffffff;
+  //background-color: #ffffff;
   padding-left: 0em;
   padding-right: 0em;
   overflow: hidden;
 }
 
 .category {
+  background-color: #ffffff;
   border-top: solid rgb(216, 216, 216) 0.1em;
   background-color: rgb(253, 253, 253);
   color: rgb(92, 92, 92);
@@ -25,6 +26,7 @@ $Lignt-Blue: rgb(160, 241, 246);
   padding-top: 0.8em;
   padding-bottom: 0em;
   display: block;
+  margin-bottom: 0.5em;
   cursor: pointer;
 }
 
