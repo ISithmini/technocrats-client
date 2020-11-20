@@ -101,8 +101,8 @@ const ManageCategories = () => {
                         return subCategory.category === category._id;
                       }).map(selectedSubCategory => {
                         return(
-                          <div className="subCategory">
-                            <div className="categoryItem" key={ selectedSubCategory.name } >{ selectedSubCategory.name }</div>
+                          <div className="subCategory"  key={ selectedSubCategory.name }>
+                            <div className="categoryItem" >{ selectedSubCategory.name }</div>
                             <IoMdClose className="categoryItem closeBtn" onClick={() => {deleteSubCategory(selectedSubCategory._id)}} />
                           </div>
                         )
