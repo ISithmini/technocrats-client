@@ -1,13 +1,17 @@
 $Lignt-Blue: rgb(160, 241, 246);
 
+.dashboard {
+  display: grid;
+  grid-template-columns: 400px auto;
+}
+
 .RightSideContent {
   padding-top: 2em !important;
   box-shadow: 0.5px 0.5px 5px rgba($color: #00000013, $alpha: 0.5);
   background-color: rgb(233, 233, 233);
   padding: 1em;
+  width: 100%;
   position: relative;
-  float: left;
-  width: 79vw;
   padding: 1em;
   top: 0;
   display: block;
@@ -65,8 +69,10 @@ $Lignt-Blue: rgb(160, 241, 246);
   border: solid rgb(216, 216, 216) 0.15em;
 }
 
-@media screen and (max-width: 900px) {
-
+@media screen and (max-width: 991px) {
+  .dashboard {
+    grid-template-columns: auto;
+  }
   .RightSideContent {
     position: relative;
     float: left;

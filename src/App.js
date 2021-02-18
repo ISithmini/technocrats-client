@@ -1,14 +1,16 @@
 import React from 'react';
 import Home from './Components/HomeComponents/Home';
-import Navbar from './Components/Navbar';
+//import Navbar from './Components/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Components/LoginComponent/Login';
 import AuthContextProvider from './context/AuthContext';
 import CreateAccount from './Components/RegisterComponent/CreateAccount';
 import RouteLock from './helpers/RouteLock';
-import Dashboard from './Components/Dashboard/Dashboard';
+
 import Unauthorized from './helpers/Unauthorized';
-import JobSearch from './Components/FindJobs/JobSearch';
+import JobSearch from './Containers/JobSearch';
+import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
+import Dashboard from './Containers/Dashboard';
 
 function App() {
 
@@ -16,8 +18,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <AuthContextProvider>
-          <Navbar/>
-          <Switch>
+          <NavBarComponent/>
+          <Switch> 
             <Route path='/' exact component={ Home }/>
             <Route path='/login' exact component={ Login }/>
             <Route path='/register' exact component={ CreateAccount }/>
