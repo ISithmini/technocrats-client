@@ -4,15 +4,11 @@
 
 .navbar {
   height: 100px;
-  display: flex;
-  align-items: center;
-  width: 100vw;
   position: fixed;
-  top: 0;
   z-index: 999;
   transition: 0.2s;
-  width: 100vw !important;
   background-color: var(--primaryColour);
+  width: 100vw;
 }
 
 .navbar-container {
@@ -24,7 +20,8 @@
   padding-right: 300px;
 }
 .navbar.navbar-coloured {
-  height: 80px;
+  position: fixed;
+  height: 70px;
   box-shadow: 0px 2px 10px 1px #000000b2;
 }
 

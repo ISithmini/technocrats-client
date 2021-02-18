@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './Components/HomeComponents/Home';
+import Home from './Containers/Home';
 //import Navbar from './Components/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Components/LoginComponent/Login';
@@ -11,6 +11,7 @@ import Unauthorized from './helpers/Unauthorized';
 import JobSearch from './Containers/JobSearch';
 import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import Dashboard from './Containers/Dashboard';
+import HeroSection from './Components/HomeComponents/HeroSection';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
             <Route path='/unauthorized' component={ Unauthorized }/>
           </Switch>
         </AuthContextProvider>
+        
       </BrowserRouter>
     </div>
   );

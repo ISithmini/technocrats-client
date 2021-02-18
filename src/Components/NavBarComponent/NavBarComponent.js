@@ -106,7 +106,7 @@ const NavBarComponent = () => {
   
 
 	return (
-		<>
+		<div className="navbar-stick">
 			<div className={scrolled || click ? 'navbar navbar-coloured' : 'navbar'}>
 				<div className="navbar-container">
 					<Link to="/" className="navbar-logo">
@@ -144,8 +144,8 @@ const NavBarComponent = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
-};
+}
 
 export default NavBarComponent;

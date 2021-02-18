@@ -8,7 +8,7 @@ const PostList = () => {
         [1, 2, 3, 5, 6].map(post => {
           return (
             <div key={ post }>
-              <SkeletonJobPost type="mdWidth" />
+              <SkeletonJobPost type="maxWidth" />
             </div>
           )
         })
