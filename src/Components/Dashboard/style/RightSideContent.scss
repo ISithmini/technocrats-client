@@ -1,5 +1,21 @@
 $Lignt-Blue: rgb(160, 241, 246);
 
+.section-head {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  height: 60px;
+  color: rgb(90, 90, 90);
+  font-size: 1.4em;
+  font-weight: 650;
+  margin-bottom: 30px;
+
+  .head-icon {
+    margin-right: 10px;
+  }
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 400px auto;

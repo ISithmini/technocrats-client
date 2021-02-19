@@ -5,8 +5,10 @@ import { deleteUserByAdmin, editUserByAdmin, findUserAdm } from '../../../api/us
 import { getRoles } from '../../../api/roleApi/roleApi';
 import { checkAccess } from '../../../helpers/authentication';
 import { AuthContext } from '../../../context/AuthContext';
-import SkeletonJobPost from '../../Skeleton/SkeletonJobPost';
+//import SkeletonJobPost from '../../Skeleton/SkeletonJobPost';
 import SkeletonUserTile from '../../Skeleton/SkeletonUserTile';
+import { DashBoardHeadSection } from '../DashboardHeadSection';
+import { FaUserLock } from "react-icons/fa"
 
 const ManageUser = () => {
 
@@ -26,6 +28,12 @@ const ManageUser = () => {
   const [formVerifyStatus, setformVerifyStatus] = useState(false);
   const [formIsDissable, setformIsDissable] = useState(false);
   const [finding, setfinding] = useState(false);
+
+  const setIcon = () => {
+		return (
+			<FaUserLock className='head-icon'/>
+		);
+	};
 
   useEffect(() => {
     setformRole(user.role);
@@ -103,7 +111,7 @@ const ManageUser = () => {
 
   return (
     <div className="ManageUser ManageUserPageGrid">
-
+      { DashBoardHeadSection(setIcon,'Assign Roles and Manage Users' ) }
       <div className="UserFindFormSec item1">
         <div className="UserFindFormTitle">{ toggleFindMethod? "Enter User's Contact Number": "Enter User's Email Address" }</div>
           <form onSubmit={(e) => findUser(e)}>

@@ -4,11 +4,12 @@ $SidePanel-Active-FontColor: adjust-hue($color: #cfcfcf, $degrees: 0);
 
 div.sidePanel {
   //margin-top: 3em;
+  border-top: 1px solid #757575;
   border-radius: 0em;
   position: sticky;
   float: left;
   top: 0;
-  background-color: #444;
+  background-color: var(--primaryColour);
   height: auto;
   margin-left: 0vw;
   margin-right: 0vw;
@@ -149,7 +150,6 @@ div.sidePanel {
   div.sidePanel.sidePanelshow {
     z-index: 3;
     top: 0;
-    background-color: #363636;
   }
   .Collapse-btn {
     display: block !important;
