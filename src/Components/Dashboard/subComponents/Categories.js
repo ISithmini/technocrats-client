@@ -2,16 +2,23 @@ import React from 'react'
 import ManageCategories from './ManageCategories'
 import '../style/Categories.scss'
 import { Switch, NavLink, Route } from 'react-router-dom'
-import TimeBasedCategories from './TimeBasedCategories'
+import TimeBasedCategories from './TimeBasedCategories';
+import { DashBoardHeadSection } from '../DashboardHeadSection';
+import { IoMdPricetags } from "react-icons/io";
 
 
 const Categories = () => {
 
   //const { url, path } = useRouteMatch();
+  const setIcon = () => {
+		return (
+			<IoMdPricetags className='head-icon'/>
+		);
+	};
 
   return (
     <div>
-      <div className="ManageCategoriesTitle" >Job Categories</div>
+      { DashBoardHeadSection(setIcon,'Job Categories and Skills' ) }
 
       <div className="Catgories">
 

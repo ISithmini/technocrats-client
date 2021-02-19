@@ -2,11 +2,13 @@ import { addPermissionToRole, createRole, getRoles, removePermissionFromRole, de
 import React, { useEffect, useState } from 'react';
 import '../style/RightSideContent.scss'
 import { getPermissions } from '../../../api/roleApi/permissionApi';
-import closeIcon from '../../../assets/icons/closeIcon.png'
-import addIcon from '../../../assets/icons/addIcon.png'
+//import closeIcon from '../../../assets/icons/closeIcon.png'
+//import addIcon from '../../../assets/icons/addIcon.png';
+import { IoIosLock } from "react-icons/io";
 import trashBin from '../../../assets/icons/trashbin1.png'
 import { checkAccess } from '../../../helpers/authentication';
 import { GrAdd, GrSubtract } from "react-icons/gr";
+import { DashBoardHeadSection } from '../DashboardHeadSection';
 
 const RolestList = () => {
 
@@ -17,6 +19,12 @@ const RolestList = () => {
   const [missingRolePermissions, setmissingRolePermissions] = useState([])
   const [selectedRole, setSelectedRole] = useState('');
   const [newRole, setNewRole] = useState('');
+
+  const setIcon = () => {
+		return (
+			<IoIosLock className='head-icon'/>
+		);
+	};
  
   useEffect(() => {// get roles and permissions from the backend
     getRoles()
@@ -100,6 +108,7 @@ const RolestList = () => {
 
   return (
     <div>
+      { DashBoardHeadSection(setIcon,'Manage Role Permissions' ) }
         <div className="RolesList gridView" >  
           { roles.map(role => {
             return(

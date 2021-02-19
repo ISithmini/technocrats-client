@@ -5,38 +5,89 @@ $theme-text-light: adjust-hue($color: #ffffff, $degrees: 0) !important;
 $theme-text-dark: adjust-hue($color: #000000, $degrees: 0) !important;
 
 .LoginPage {
-  top: 50% !important;
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  height: max-content;
+  position: relative;
+  top: 50vh;
   left: 50%;
-  position: absolute;
-  transform: translate(-50%);
+  transform: translate(-50%, -60%);
+  background-color: var(--primaryColour);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.greetingSection {
+  width: 500px;
+  border-right: 1px solid #fff;
 }
 
 .welcome {
   text-align: center;
   font-family: Montserrat-SemiBold;
   font-size: 4em;
-  color: $theme-blue;
+  color: rgb(235, 235, 235);
 }
 
 .welcomeText {
   font-family: Montserrat-Regular;
+  color: rgb(235, 235, 235);
   font-size: 1.5em;
   padding-left: 2em;
   padding-right: 2em;
 }
 
-.loginTitle {
-  font-family: Montserrat-SemiBold;
-  font-size: 4em;
+.LoginForm {
+  width: 500px;
+  padding: 40px;
 }
 
-.LoginForm {
-  padding-top: 5%;
-  padding-left: 6% !important;
-  padding-right: 6% !important;
-  padding-bottom: 4%;
-  border-radius: 2em;
-  margin: auto;
+@media only screen and (max-width: 991px) {
+  .LoginPage {
+    display: block;
+    width: 500px;
+    top: 0vh;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    margin-top: 180px;
+  }
+  .greetingSection {
+    width: 500px;
+    border-right: none;
+  }
+  .LoginForm {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .LoginPage {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+  .greetingSection{
+    width: 100%;
+  }
+
+  .welcome {
+    font-size: 2em;
+  }
+
+  .welcomeText {
+    font-size: 1.2em;
+  }
+
+  .LoginForm {
+    padding-top: 5px;
+  }
+}
+
+.loginTitle {
+  font-family: Montserrat-SemiBold;
+  font-size: 2em;
+  color: rgb(240, 240, 240);
 }
 
 .Login-btn {
@@ -52,14 +103,15 @@ $theme-text-dark: adjust-hue($color: #000000, $degrees: 0) !important;
   width: 40%;
   float: left;
   height: 2em;
-  
+  border-top: 1px solid rgb(187, 187, 187);
 }
 
 .LoginOr {
   float: left;
   padding-left: 1em;
   padding-right: 1em;
-  font-size: 1.5em;
+  font-size: 1.1em;
+  color: rgb(187, 187, 187);
 }
 
 .secBreak {

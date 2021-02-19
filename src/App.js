@@ -6,12 +6,11 @@ import Login from './Components/LoginComponent/Login';
 import AuthContextProvider from './context/AuthContext';
 import CreateAccount from './Components/RegisterComponent/CreateAccount';
 import RouteLock from './helpers/RouteLock';
-
+import './App.css';
 import Unauthorized from './helpers/Unauthorized';
 import JobSearch from './Containers/JobSearch';
 import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import Dashboard from './Containers/Dashboard';
-import HeroSection from './Components/HomeComponents/HeroSection';
 
 function App() {
 

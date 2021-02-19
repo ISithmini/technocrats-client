@@ -65,7 +65,6 @@ const ManageCategories = () => {
   
   return (
     <div className="ManageCategories" >
-
       <div className="AddCategorySec">
         <form onSubmit={addCategory}>
           <input className="form-control addCategoryFormItem" onChange={(e) => setnewCategory(e.target.value)} type="text" placeholder="Enter a new Category"/>

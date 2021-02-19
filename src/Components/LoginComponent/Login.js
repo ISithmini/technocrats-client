@@ -38,31 +38,25 @@ const Login = () => {
   return (
     <animated.div style={animprops1}>
 
-    <div className="LoginPage col-lg-6">
+    <div className="LoginPage">
 
       <div className="greetingSection">
-
-        <div className="welcome">Hi<br/>Welcome</div>
+        <div className="welcome">Hi! Welcome</div>
         <br/>
-        
         <div className="welcomeText" style={{textAlign:"center"}}>
           <p>Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco dolor proident.</p>
         </div>
+      </div>
 
         <div style={{textAlign:"center"}}>
           
-          <p className="loginTitle">Login</p>
-
-          <div className="LoginForm col-lg-8 col-md-12 col-sm-12">
-
+          <div className="LoginForm">
+            <p className="loginTitle">Login</p>
             <form onSubmit={(e) => {handleSubmit(e)}}>
-
               <div className="form-group">
                 <input className="form-control" type='number' name='phoneNumber' id='phoneNumber' placeholder='Mobile Number' />
               </div>
-
               <div className="form-group"><button className="btn Login-btn">Send OTP</button></div>
-
             </form>
 
             <div className="secBreak">
@@ -71,8 +65,7 @@ const Login = () => {
               <hr className="LoginHr" />
             </div>
             
-              <form  onSubmit={(e) => {handleSubmit(e)}}>
-
+            <form  onSubmit={(e) => {handleSubmit(e)}}>
               <div className="form-group">
                 <input 
                   className="form-control" 
@@ -95,17 +88,14 @@ const Login = () => {
                     { passwordError }
                   </div>
               </div>
-
               <button  className="btn Login-btn">Login</button>
-
-              </form>
+            </form>
 
           </div>
 
         </div>
 
       </div>
-    </div>
     </animated.div>
   )
 }
