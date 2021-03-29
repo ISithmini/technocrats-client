@@ -33,8 +33,11 @@
   margin-bottom: 5px;
 }
 
+.pro-sub-link {
+  text-decoration: none !important;
+}
+
 .profile-sub-topic:hover {
-  text-decoration: none;
   background-color: white;
   color: rgb(26, 54, 87);
   font-weight: 700;
@@ -42,12 +45,17 @@
 }
 
 .pro-sub-link.active {
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 700;
   width: 50px;
   height: 15px;
-  background-color: rgb(37, 80, 161);
+  background-color: rgb(158, 162, 172);
   position: static;
+  text-decoration: none;
+
+  .profile-sub-topic {
+    background-color: rgb(165, 167, 172);
+  }
 }
 
 .mypro-heading {
