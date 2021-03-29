@@ -11,6 +11,7 @@ import Unauthorized from './helpers/Unauthorized';
 import JobSearch from './Containers/JobSearch';
 import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import Dashboard from './Containers/Dashboard';
+import Profile from './Components/ProfileComponent/Profile';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <NavBarComponent/>
           <Switch> 
             <Route path='/' exact component={ Home }/>
+            <Route path='/myprofile'  component={ Profile }/>
             <Route path='/login' exact component={ Login }/>
             <Route path='/register' exact component={ CreateAccount }/>
             <Route path='/jobs' exact component={ JobSearch }/>

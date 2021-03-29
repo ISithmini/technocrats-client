@@ -26,7 +26,7 @@ const Login = () => {
     .then(res => {
       console.log(res);
       dispatch({ type: 'GET_USER' });
-      history.push('/');
+      history.goBack();
     })
     .catch(err => {
       console.log(err.response);
