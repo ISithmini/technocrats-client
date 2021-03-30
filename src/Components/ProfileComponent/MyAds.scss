@@ -8,3 +8,26 @@
   text-align: center;
   margin-top: 3px;
 }
+
+.ad-btn {
+  text-align: right !important;
+  padding: 15px;
+}
+
+.ad-container {
+  padding: 7px;
+  display: block;
+}
+
+.ad-block {
+  display: flex;
+  border-color: white;
+  border-style: solid;
+}
+
+.ad-img {
+  width: 250px;
+  height: auto;
+  overflow: hidden;
+  padding: 5px;
+}

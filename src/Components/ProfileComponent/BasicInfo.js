@@ -5,6 +5,7 @@ export default function BasicInfo() {
     return (
         <div className="basicinfo-container">
             <h3 className="basic-info-title">Basic Info</h3>
+            
             <div className="basic-info-content">
                 <div>
                     <p className="basic-info-details">First Name</p> 

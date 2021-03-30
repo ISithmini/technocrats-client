@@ -9,7 +9,7 @@ import { FaFileInvoiceDollar } from 'react-icons/fa';
 import { HiOutlineLogout } from 'react-icons/hi';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import BasicInfo from './BasicInfo';
-import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
 import MyAds from './MyAds';
 import MyMembership from './MyMembership';
 import MyChats from './MyChats';
@@ -23,8 +23,10 @@ export default function Profile() {
     const [userType, setUserType] = useState(false);
     return (
         <div className="myprofile-container">
-            {!userType && <Button buttonType="outLine" className="kk" onClick={(e) =>{setUserType(!userType)}}>Switch to job seeker mode</Button>}
-            {userType && <Button buttonType="outLine" className="kk" onClick={(e) =>{setUserType(!userType)}}>Switch to job provider mode</Button>}
+            {!userType && <Button buttonType="outLine" onClick={(e) =>{setUserType(!userType)}}>Switch to job seeker mode</Button>}
+            {userType && <Button buttonType="outLine" onClick={(e) =>{setUserType(!userType)}}>Switch to job provider mode</Button>}
+            {!userType && <p className="mypro-heading">Viewing profile as job provider</p>}
+            {userType && <p className="mypro-heading">Viewing profile as job seeker</p>}
                 <div className="myprofile-content">
                     <div className = "myprofile-categories">
                         <h3 className="profile-head-topic"> Account </h3>
@@ -54,13 +56,15 @@ export default function Profile() {
 
                         <h3 className="profile-head-topic"> My Jobs </h3>
 
+        
                         <NavLink to="/myprofile/postedjobs" className="pro-sub-link" exact>
-                        {!userType && <p className="profile-sub-topic"><ImFileOpenoffice/> Post Jobs</p>}
+                        {!userType && <p className="profile-sub-topic"><BsBriefcase/> Post Jobs</p>}
                         </NavLink>
 
                         <NavLink to="/myprofile/appliedjobs" className="pro-sub-link" exact>
                         {userType && <p className="profile-sub-topic"><ImFileOpenoffice/> Applied Jobs</p>}    
                         </NavLink>
+    
 
                         <p className="profile-head-topic"> <RiLockPasswordLine/> Reset Password </p>
                         <p className="profile-head-topic"> <HiOutlineLogout/> Logout </p>
