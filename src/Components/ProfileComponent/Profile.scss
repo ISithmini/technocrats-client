@@ -135,3 +135,45 @@
     width: 100vw;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .mypro-heading {
+    font-size: 1.2em;
+  }
+  .toggle-icon-show {
+    display: block;
+    top: 175px;
+    left: 3px;
+  }
+
+  .myprofile-content-info {
+    width: 132%;
+    margin-left: -175px;
+  }
+
+  .sidebar-title {
+    font-size: 1.2em;
+  }
+
+  .toggle-icon-show.hide {
+    left: auto;
+    right: -2px;
+    top: 175px;
+    background: rgb(54, 55, 61);
+  }
+
+  .myprofile-categories {
+    width: 3em;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 10;
+    left: 100;
+  }
+
+  .myprofile-categories.active {
+    left: 0;
+    width: 100vw;
+  }
+}
