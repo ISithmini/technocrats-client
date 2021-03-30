@@ -11,7 +11,7 @@ const JobPreviewComponent = () => {
   return (
     <div>
       <div className="card shadow mr-0 pr-0 job-card">
-        <div className="row  container ">
+        <div className="row no-gutters  container ">
           <div className="col-md-3 provider-details text-center">
             <img src="/assets/images/Avatar-Image.png" alt="avatar" />
             <br />
