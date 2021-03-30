@@ -87,14 +87,14 @@
   border-bottom: solid 2px rgb(255, 255, 255);
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1300px) {
   .navbar-container {
     padding-left: 80px;
     padding-right: 80px;
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1400px) {
   .navbar-container {
     padding-left: 100px;
     padding-right: 100px;

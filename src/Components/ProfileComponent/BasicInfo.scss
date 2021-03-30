@@ -33,3 +33,16 @@
   padding: 5px;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 600px) {
+  .basic-info-content {
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  .basicinfo-container {
+    background-color: rgb(26, 54, 87);
+    height: auto;
+    width: 310px;
+  }
+}
