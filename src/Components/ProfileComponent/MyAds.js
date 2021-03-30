@@ -13,6 +13,7 @@ export default function MyAds() {
                 <div className="ad-container">
                     <div className="ad-block">
                         <img src="/assets/images/adimg/ad1.jpg" alt="kk" className="ad-img"/>
+                        <div></div>
                         <h3>Advertisment title</h3>
                         <p>Rs. 5000</p>
                     </div>
