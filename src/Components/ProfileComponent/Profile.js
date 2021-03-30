@@ -59,8 +59,7 @@ export default function Profile() {
                         </NavLink>
 
                         <NavLink to="/myprofile/appliedjobs" className="pro-sub-link" exact>
-                        {userType && <p className="profile-sub-topic"><ImFileOpenoffice/> Applied Jobs</p>}
-                        
+                        {userType && <p className="profile-sub-topic"><ImFileOpenoffice/> Applied Jobs</p>}    
                         </NavLink>
 
                         <p className="profile-head-topic"> <RiLockPasswordLine/> Reset Password </p>
