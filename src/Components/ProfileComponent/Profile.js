@@ -3,11 +3,11 @@ import './Profile.scss'
 import { RiAdvertisementLine } from 'react-icons/ri';
 import { MdCardMembership, MdFavoriteBorder } from 'react-icons/md';
 import { BsChatSquare, BsBriefcase } from 'react-icons/bs';
-import { AiOutlineProfile } from 'react-icons/ai';
+import { AiOutlineProfile, AiOutlineMenuUnfold,AiOutlineMenuFold } from 'react-icons/ai';
 import { ImFileOpenoffice } from 'react-icons/im';
 import { FaFileInvoiceDollar } from 'react-icons/fa';
 import { HiOutlineLogout } from 'react-icons/hi';
-import { RiLockPasswordLine } from 'react-icons/ri';
+import { RiLockPasswordLine ,RiMenuUnfoldLine, RiMenuFoldLine} from 'react-icons/ri';
 import BasicInfo from './BasicInfo';
 import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
 import MyAds from './MyAds';
@@ -19,55 +19,125 @@ import MyFavourites from './MyFavourites';
 import AppliedJobs from './AppliedJobs';
 import Button from '../Button/Button'
 
+
 export default function Profile() {
     const [userType, setUserType] = useState(false);
+    const [menu, setMenu] = useState(false);
+
+    const displayMenu = () => {
+        setMenu(true);
+    }
+
+    const hideMenu = () => {
+        setMenu(false);
+    }
+    
     return (
         <div className="myprofile-container">
+        <div className="pro-switch-button"> 
             {!userType && <Button buttonType="outLine" onClick={(e) =>{setUserType(!userType)}}>Switch to job seeker mode</Button>}
             {userType && <Button buttonType="outLine" onClick={(e) =>{setUserType(!userType)}}>Switch to job provider mode</Button>}
+        </div>    
             {!userType && <p className="mypro-heading">Viewing profile as job provider</p>}
             {userType && <p className="mypro-heading">Viewing profile as job seeker</p>}
+
+
+
                 <div className="myprofile-content">
-                    <div className = "myprofile-categories">
-                        <h3 className="profile-head-topic"> Account </h3>
-                        <NavLink to="/myprofile/" className="pro-sub-link" exact>
-                            <p className="profile-sub-topic"><AiOutlineProfile/> Basic info</p>
+                { !menu &&
+                    <div className="toggle-icon-show" onClick={displayMenu}>
+                      <AiOutlineMenuUnfold/>
+                  </div>
+                }
+                { menu &&
+                    <div className="toggle-icon-show hide" onClick={hideMenu}>
+                        <AiOutlineMenuFold/>
+                    </div>
+                }
+                    <div className = {menu ? "myprofile-categories active" : "myprofile-categories"}>
+                        <NavLink to="/myprofile/" exact className="sidebar-title" onClick={hideMenu}>
+                            <div className="sidebar-content">
+                                <div className="sidebar-icon">
+                                    <AiOutlineProfile/>
+                                </div>
+                                <div className="sidebar-title-txt">
+                                    Basic Information
+                                </div>
+                            </div>
                         </NavLink>
 
-                        <NavLink to="/myprofile/myads" className="pro-sub-link" exact>
-                            <p className="profile-sub-topic"> <RiAdvertisementLine/> My Ads</p>
+                        <NavLink to="/myprofile/myads" exact className="sidebar-title" onClick={hideMenu}>
+                            <div className="sidebar-content">
+                                <div className="sidebar-icon">
+                                    <MdCardMembership/>
+                                </div>
+                                <div className="sidebar-title-txt">
+                                    My Advertisments
+                                </div>
+                            </div>
                         </NavLink>
 
-                        <NavLink to="/myprofile/mymembership" className="pro-sub-link" exact>
-                        <p className="profile-sub-topic"> <MdCardMembership/> My Membership</p>
+                        <NavLink to="/myprofile/myfavourites" exact className="sidebar-title" onClick={hideMenu}>
+                            <div className="sidebar-content">
+                                <div className="sidebar-icon">
+                                    <MdFavoriteBorder/>
+                                </div>
+                                <div className="sidebar-title-txt">
+                                    My Faviourites
+                                </div>
+                            </div>
                         </NavLink>
 
-                        <NavLink to="/myprofile/myfavourites" className="pro-sub-link" exact>
-                        <p className="profile-sub-topic"> <MdFavoriteBorder/> My favourites</p>
+                        <NavLink to="/myprofile/mychats" exact className="sidebar-title" onClick={hideMenu}>
+                            <div className="sidebar-content">
+                                <div className="sidebar-icon">
+                                    <BsChatSquare/>
+                                </div>
+                                <div className="sidebar-title-txt">
+                                    My Chats
+                                </div>
+                            </div>
                         </NavLink>
 
-                        <NavLink to="/myprofile/mychats" className="pro-sub-link" exact>
-                        <p className="profile-sub-topic"><BsChatSquare/> My chats</p>
+                        <NavLink to="/myprofile/myinvoices" exact className="sidebar-title" onClick={hideMenu}>
+                            <div className="sidebar-content">
+                                <div className="sidebar-icon">
+                                    <FaFileInvoiceDollar/>
+                                </div>
+                                <div className="sidebar-title-txt">
+                                    My Invoices
+                                </div>
+                            </div>
                         </NavLink>
 
-                        <NavLink to="/myprofile/myinvoices" className="pro-sub-link" exact>
-                        <p className="profile-sub-topic"><FaFileInvoiceDollar/> My invoices</p>
-                        </NavLink>
+                        {!userType &&
+                        <NavLink to="/myprofile/postedjobs" exact className="sidebar-title" onClick={hideMenu}>
+                            <div className="sidebar-content">
+                                <div className="sidebar-icon">
+                                    <BsBriefcase/>
+                                </div>
+                                 
+                                <div className="sidebar-title-txt">
+                                Posted Jobs
+                                </div>
+                                
+                            </div>
+                        </NavLink>}
 
-                        <h3 className="profile-head-topic"> My Jobs </h3>
-
-        
-                        <NavLink to="/myprofile/postedjobs" className="pro-sub-link" exact>
-                        {!userType && <p className="profile-sub-topic"><BsBriefcase/> Post Jobs</p>}
-                        </NavLink>
-
-                        <NavLink to="/myprofile/appliedjobs" className="pro-sub-link" exact>
-                        {userType && <p className="profile-sub-topic"><ImFileOpenoffice/> Applied Jobs</p>}    
-                        </NavLink>
-    
-
-                        <p className="profile-head-topic"> <RiLockPasswordLine/> Reset Password </p>
-                        <p className="profile-head-topic"> <HiOutlineLogout/> Logout </p>
+                        
+                        {userType &&
+                            <NavLink to="/myprofile/appliedjobs" exact className="sidebar-title" onClick={hideMenu}>
+                                <div className="sidebar-content">
+                                    <div className="sidebar-icon">
+                                        <ImFileOpenoffice/>
+                                    </div>
+                                     
+                                    <div className="sidebar-title-txt">
+                                    Applied Jobs
+                                    </div>
+                                    
+                                </div>
+                            </NavLink>}
                     </div>
 
                     <div className="myprofile-content-info">
