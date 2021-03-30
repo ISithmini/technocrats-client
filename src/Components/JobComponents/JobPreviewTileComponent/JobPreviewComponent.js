@@ -6,6 +6,8 @@ import { AiFillMessage } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import { FaMoneyBillWave } from "react-icons/fa";
+import { NavLink } from 'react-router-dom';
+
 
 const JobPreviewComponent = () => {
   return (
@@ -23,13 +25,9 @@ const JobPreviewComponent = () => {
               </div>
             </div>
             <div className="provider-contact">
-              <a href="#">
-                <IoLogoWhatsapp />
-              </a>{" "}
+              <NavLink to=""><IoLogoWhatsapp /></NavLink>
               &nbsp;
-              <a href="#">
-                <AiFillMessage />
-              </a>
+              <NavLink to=""><AiFillMessage /></NavLink>
             </div>
             <button type="button" className="btn btn-primary mt-2">
               Apply Job
@@ -69,7 +67,6 @@ const JobPreviewComponent = () => {
           </div>
         </div>
       </div>
-      JobPreviewComponent hi
     </div>
   );
 };
