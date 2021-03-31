@@ -27,10 +27,6 @@ export default function Profile() {
     const [userType, setUserType] = useState(false);
     const [menu, setMenu] = useState(false);
 
-    useEffect(() => {
-        console.log(user);
-    }, [])
-
     const displayMenu = () => {
         setMenu(true);
     }
@@ -148,7 +144,9 @@ export default function Profile() {
                     </div>
 
                     <div className="myprofile-content-info">
-                        <Route path="/myprofile/"  exact component={BasicInfo} />
+                        <Route path="/myprofile/"  exact>
+                            <BasicInfo user={user}/>
+                        </Route>
                         <Route path="/myprofile/myads"  exact component={MyAds} />
                         <Route path="/myprofile/myfavourites"  exact component={MyFavourites} />
                         <Route path="/myprofile/mymembership"  exact component={MyMembership} />
