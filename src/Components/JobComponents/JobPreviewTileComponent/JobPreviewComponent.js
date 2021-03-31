@@ -13,11 +13,12 @@ const JobPreviewComponent = () => {
   return (
     <div>
       <div className="card shadow mr-0 pr-0 job-card">
-        <div className="row no-gutters  container ">
+        <div className="row no-gutters container ">
           <div className="col-md-3 provider-details text-center">
             <img src="/assets/images/Avatar-Image.png" alt="avatar" />
             <br />
             <span>Sathira Nipun</span>
+           
             <div className="row">
               <div className="col-md-6 p-0 m-o">Level 01</div>
               <div className="col-md-6 p-0 m-o">
@@ -58,7 +59,7 @@ const JobPreviewComponent = () => {
                 <span className="location">
                   <MdLocationOn /> &nbsp; Moratuwa,Sri Lanka
                 </span>
-                <div className="row ">
+                <div className="row task-budjet ">
                   <div className="budjet-display my-auto"><FaMoneyBillWave/>&nbsp; Task Budjet</div>
                   <div className="budjet-displayprice">LKR 800</div>
                 </div>

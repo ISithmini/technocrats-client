@@ -2,6 +2,13 @@
   margin: 0px 0px 0px 10px;
   padding: 10px !important;
   // padding: 10px 0px;
+  box-sizing: border-box !important;
+
+
+}
+
+.seeker-details{
+
 }
 
 .seeker-details span {
@@ -11,7 +18,31 @@
 
 .seeker-details img {
   text-align: center;
-
+  vertical-align: baseline;
   width: 80px;
-  margin: 3px;
+}
+
+.job-seeker-card-image-sec {
+  display: flex;
+  align-items: center;
+  padding-right:0 !important;
+  padding-left:0 !important;
+
+
+
+  .job-seeker-card-img-container {
+    width: 100px;
+    height: fit-content;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+  }
+}
+
+.seeker-detail-pannel{
+  padding: 5px !important;
+}
+
+.job-seeker-description{
+  text-align: center !important;
 }
