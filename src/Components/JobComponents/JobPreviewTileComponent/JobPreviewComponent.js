@@ -17,7 +17,7 @@ const JobPreviewComponent = () => {
           <div className="col-md-3 provider-details text-center">
             <img src="/assets/images/Avatar-Image.png" alt="avatar" />
             <br />
-            <span>Sathira Nipun</span>
+            <span className="font-weight-bold">Sathira Nipun</span>
            
             <div className="row">
               <div className="col-md-6 p-0 m-o">Level 01</div>
@@ -30,14 +30,14 @@ const JobPreviewComponent = () => {
               &nbsp;
               <NavLink to=""><AiFillMessage /></NavLink>
             </div>
-            <button type="button" className="btn btn-primary mt-2">
+            <button type="button" className="btn font-weight-bold btn-primary mt-2">
               Apply Job
             </button>
           </div>
 
           <div className="col-md container card pl-4 m-0 p-2 job-details">
             <div className="row ">
-              <h3>Need a Graphic Designer</h3>
+              <h3 className="font-weight-bold">Need a Graphic Designer</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
                 explicabo magnam adipisci sed dolorum expedita molestias
@@ -52,7 +52,7 @@ const JobPreviewComponent = () => {
             <br />
             <div className="row">
               <div className="col-md-6 p-0 m-o">
-                <span className="duedate-title">Due Date</span> <br />
+                <span className="font-weight-bold duedate-title">Due Date</span> <br />
                 <span className="duedate"> 29 April 2020</span>
               </div>
               <div className="col-md-6 p-0 m-o">

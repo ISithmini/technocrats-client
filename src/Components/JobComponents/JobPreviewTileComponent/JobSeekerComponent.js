@@ -35,16 +35,16 @@ const JobSeekerComponent = () => {
                 <AiFillMessage />
               </NavLink>
             </div>
-            <br />
+
             <p>Positive Feedback | 25</p>
           </div>
         </div>
-        <span class="border text-center border-right-0 border-left-0">
+        <span class="border seeker-location text-center border-right-0 border-left-0">
           <MdLocationOn /> &nbsp; Rathmalana ,Moratuwa ,Sri Lanka
         </span>
         <br/>
         <p className="job-seeker-description">I am professional Graphic Designer since more than 5 years. please view my profile or contact me for get more details</p>
-        <button type="button" className="btn btn-primary mt-2">
+        <button type="button" className="btn font-weight-bold btn-primary mt-2">
               View Profile
             </button>
       </div>

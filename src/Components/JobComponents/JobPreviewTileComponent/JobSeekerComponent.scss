@@ -1,19 +1,17 @@
+////////////// job seeker card
+
 .jobseeker-card {
   margin: 0px 0px 0px 10px;
   padding: 10px !important;
-  // padding: 10px 0px;
   box-sizing: border-box !important;
 
 
 }
 
-.seeker-details{
-
-}
-
 .seeker-details span {
-  font-weight: 700 !important;
-  font-size: 15pt !important;
+  font-weight: bold !important;
+  font-size: 20pt !important;
+  font-family: 'Segoe UI';
 }
 
 .seeker-details img {
@@ -27,8 +25,6 @@
   align-items: center;
   padding-right:0 !important;
   padding-left:0 !important;
-
-
 
   .job-seeker-card-img-container {
     width: 100px;
@@ -45,4 +41,8 @@
 
 .job-seeker-description{
   text-align: center !important;
+}
+
+.seeker-location{
+  font-weight: 500 !important;
 }
