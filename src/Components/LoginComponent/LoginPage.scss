@@ -25,13 +25,11 @@ $theme-text-dark: adjust-hue($color: #000000, $degrees: 0) !important;
 
 .welcome {
   text-align: center;
-  font-family: Montserrat-SemiBold;
   font-size: 4em;
   color: rgb(235, 235, 235);
 }
 
 .welcomeText {
-  font-family: Montserrat-Regular;
   color: rgb(235, 235, 235);
   font-size: 1.5em;
   padding-left: 2em;
@@ -85,7 +83,6 @@ $theme-text-dark: adjust-hue($color: #000000, $degrees: 0) !important;
 }
 
 .loginTitle {
-  font-family: Montserrat-SemiBold;
   font-size: 2em;
   color: rgb(240, 240, 240);
 }
@@ -93,7 +90,6 @@ $theme-text-dark: adjust-hue($color: #000000, $degrees: 0) !important;
 .Login-btn {
   background-color: $theme-blue;
   width: 8em;
-  font-family: Montserrat-SemiBold;
   color: $theme-Light;
   border-top: solid rgb(211, 207, 207) 0.5px !important;
   border-bottom: solid rgb(211, 206, 206) 0.5px !important;

@@ -1,16 +1,30 @@
 import Button from '../Button/Button'
-import {React, useState} from 'react'
+import React, { useState, useEffect} from 'react';
 import './BasicInfo.scss'
 import Axios from "axios";
+import { getUser } from '../../api/userApi/userApi';
 
-export default function BasicInfo() {
+const BasicInfo = ({
+    user
+}) => {
 
-    const [joke, setJoke] = useState("");
+    const [name, setname] = useState('');
+    const [email, setemail] = useState('');
+    const [location, setlocation] = useState('');
+    const [telNo, settelNo] = useState('');
 
-    const getData = Axios.get("https://official-joke-api.appspot.com/random_joke")
-    .then((response)=>{
-        setJoke(response.data.setup + ".." + response.data.punchline);
-    });
+    useEffect(() => {
+      //console.log(user.id);
+      getUser({_id: user.id})
+      .then(res => {
+        let curruser = res.data.user
+          console.log(curruser.id);
+          setname(curruser.name);
+          setemail(curruser.email);
+          setlocation(curruser.location);
+          settelNo(curruser.contactNo);
+      })  
+    }, []);
 
     return (
         <div className="basicinfo-container">
@@ -19,34 +33,37 @@ export default function BasicInfo() {
             <div className="basic-info-content">
                 <div>
                     <p className="basic-info-details">First Name</p> 
-                    <p className="basic-info-details-content">Sanjana</p>
+                    <p className="basic-info-details-content">{ name.split(" ", 1) }</p>
                 </div>
 
                 <div>
                     <p className="basic-info-details">Last Name</p>
-                    <p className="basic-info-details-content">Ganegoda</p>
+                    <p className="basic-info-details-content">{ name }</p>
                 </div>
 
                 <div>
                 <p className="basic-info-details">Email Address</p>
-                <p className="basic-info-details-content">sanjanasithira29@gmail.com</p>
+                <p className="basic-info-details-content">{ email }</p>
                 </div>
 
                 <div>
                 <p className="basic-info-details">District</p>
-                <p className="basic-info-details-content">Colombo</p>
+                <p className="basic-info-details-content">{ location }</p>
                 </div>
 
                 <div>
                 <p className="basic-info-details">City</p>
-                <p className="basic-info-details-content">Piliyandala</p>
+                <p className="basic-info-details-content">{ location }</p>
                 </div>
 
                 <div>
                 <p className="basic-info-details">Phone Number</p>
-                <p className="basic-info-details-content">0716308090</p>
+                <p className="basic-info-details-content">{ telNo }</p>
                 </div>
             </div>
         </div>
     )
 }
+
+export default BasicInfo;
+
