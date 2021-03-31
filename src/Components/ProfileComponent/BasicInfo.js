@@ -61,6 +61,7 @@ const BasicInfo = ({
                 <p className="basic-info-details-content">{ telNo }</p>
                 </div>
             </div>
+        
         </div>
     )
 }
