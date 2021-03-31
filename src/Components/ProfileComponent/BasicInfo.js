@@ -5,12 +5,7 @@ import Axios from "axios";
 
 export default function BasicInfo() {
 
-    const [joke, setJoke] = useState("");
-
-    const getData = Axios.get("https://official-joke-api.appspot.com/random_joke")
-    .then((response)=>{
-        setJoke(response.data.setup + ".." + response.data.punchline);
-    });
+    
 
     return (
         <div className="basicinfo-container">
