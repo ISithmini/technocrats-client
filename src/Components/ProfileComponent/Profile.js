@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './Profile.scss'
 import { RiAdvertisementLine } from 'react-icons/ri';
 import { MdCardMembership, MdFavoriteBorder } from 'react-icons/md';
@@ -18,11 +18,18 @@ import PostedJobs from './PostedJobs';
 import MyFavourites from './MyFavourites';
 import AppliedJobs from './AppliedJobs';
 import Button from '../Button/Button'
+import { AuthContext } from '../../context/AuthContext';
 
 
 export default function Profile() {
+
+    const { user, dispatch } = useContext(AuthContext);
     const [userType, setUserType] = useState(false);
     const [menu, setMenu] = useState(false);
+
+    useEffect(() => {
+        console.log(user);
+    }, [])
 
     const displayMenu = () => {
         setMenu(true);
