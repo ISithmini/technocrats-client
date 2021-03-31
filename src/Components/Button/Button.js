@@ -3,7 +3,7 @@ import './Button.css';
 
 const TYPES = ['primary', 'outline', 'primary-float'];
 const COLOURS = ['white','dark-blue', 'grey'];
-const SIZES = ['medium', 'large', 'small', 'btn-wide'];
+const SIZES = ['medium', 'large', 'small', 'wide'];
 
 const Button = ({buttonType, buttonColour, buttonSize, children, onClick}) => {
 

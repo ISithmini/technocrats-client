@@ -29,7 +29,7 @@ const HeroSection = ({
               <Button>{`${buttonText}`}</Button>
             }
             { backgroundColour != 'dark' &&
-              <Button buttonColour="dark-blue" >{`${buttonText}`}</Button>
+              <Button buttonColour='dark-blue'>{`${buttonText}`}</Button>
             }
           </div>
         </div>
