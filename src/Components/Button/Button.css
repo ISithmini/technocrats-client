@@ -51,6 +51,20 @@
   border-radius: 3px;
 }
 
+.large {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 1.3em;
+}
+
+.wide {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
 /* //////////////////////////////////////////////////////// */
 
 .primary.dark-blue {
@@ -78,4 +92,29 @@
 }
 
 
+/* ////////////////////////////////////////////////////////// */
+
+.primary.grey {
+  background-color: var(--grey);
+  color: #fff;
+  border: 1px solid var(--grey);
+}
+
+.primary.grey:hover {
+  background-color: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+}
+
+.outline.grey {
+  background-color: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+}
+
+.outline.grey:hover {
+  background-color: var(--grey);
+  color: #fff;
+  border: 1px solid var(--grey);
+}
 
