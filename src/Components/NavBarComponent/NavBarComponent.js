@@ -76,7 +76,7 @@ const NavBarComponent = () => {
     if ( user ) {
       return(
         <li className="menu-item">
-          <Link className="nav-menu-link" to="/">
+          <Link className="nav-menu-link" to="/myprofile">
             {`Hey, ${user.name}`}
           </Link>
         </li>

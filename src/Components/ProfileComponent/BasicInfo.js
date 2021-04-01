@@ -1,7 +1,17 @@
 import Button from '../Button/Button'
-import React from 'react'
+import {React, useState} from 'react'
 import './BasicInfo.scss'
+import Axios from "axios";
+
 export default function BasicInfo() {
+
+    const [joke, setJoke] = useState("");
+
+    const getData = Axios.get("https://official-joke-api.appspot.com/random_joke")
+    .then((response)=>{
+        setJoke(response.data.setup + ".." + response.data.punchline);
+    });
+
     return (
         <div className="basicinfo-container">
             <h3 className="basic-info-title">Basic Info</h3>

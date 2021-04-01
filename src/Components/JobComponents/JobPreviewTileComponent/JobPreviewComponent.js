@@ -69,7 +69,6 @@ const JobPreviewComponent = () => {
           </div>
         </div>
       </div>
-      JobPreviewComponent hi
     </div>
   );
 };
