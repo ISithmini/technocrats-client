@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import {React, useContext, useState} from 'react';
-=======
 import React, { useState, useContext, useEffect } from 'react';
->>>>>>> origin/main
 import './Profile.scss'
 import { RiAdvertisementLine } from 'react-icons/ri';
 import { MdCardMembership, MdFavoriteBorder } from 'react-icons/md';
