@@ -7,15 +7,11 @@ import { checkAccess } from '../../helpers/authentication';
 //import Button from '../Button/Button';
 import './NavBarComponent.css';
 import Button from '../Button/Button';
-<<<<<<< HEAD
-import { AiFillMessage }  from "react-icons/ai";
+import { AiFillMessage, AiFillBell }  from "react-icons/ai";
 
-=======
-import { AiFillBell } from "react-icons/ai";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
 import NotificationModal from '../NotificationComponent/NotificationModal';
->>>>>>> origin/main
 
 const NavBarComponent = () => {
 
@@ -82,15 +78,30 @@ const NavBarComponent = () => {
     }
   }
 
-  const renderGreeting = () => {
+  const renderPostAdvertisement = () => {
     if ( user ) {
       return(
+        <li className="menu-item">
+          <Link className="nav-menu-link" to="/myprofile">
+            <Button>Post an Advertisement</Button>
+          </Link>
+        </li>
+      ) 
+    } else {
+      return (
+        <span></span>
+      )
+    }
+  }
+  const renderGreeting = () => {
+    if (user) {
+      return (
         <li className="menu-item">
           <Link className="nav-menu-link" to="/myprofile">
             {`Hey, ${user.name}`}
           </Link>
         </li>
-      ) 
+      )
     } else {
       return (
         <span></span>
@@ -220,6 +231,7 @@ const NavBarComponent = () => {
 							{ renderLoginButton() }
 							{ renderCreateAccountButton() }
               {renderChatIcon() }
+              {renderPostAdvertisement()}
 							
 						</ul>
 					</div>
