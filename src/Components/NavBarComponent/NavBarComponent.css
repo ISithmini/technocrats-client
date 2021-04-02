@@ -139,3 +139,11 @@
     margin-bottom: 5px;
   }
 }
+
+
+.notifications-title{
+  color: #1a3657 !important;
+  font-weight: bolder !important;
+  font-size: 15pt;
+
+}
