@@ -46,7 +46,7 @@ const NavBarComponent = () => {
   const renderLoginButton = () => {
     if (! user ) {
       return(
-        <li className="menu-item">
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/Login">
           <Button buttonType="outline">Log in</Button>
           </Link>
@@ -54,7 +54,7 @@ const NavBarComponent = () => {
       ) 
     } else {
       return (
-        <li className="menu-item" onClick={handleLogin}>
+        <li className="menu-item" onClick={handleLogin} >
           <Link className="nav-menu-link" to="" >
             <Button buttonType="outline">Log out</Button>
           </Link>
@@ -66,7 +66,7 @@ const NavBarComponent = () => {
   const renderCreateAccountButton = () => {
     if (! user ) {
       return(
-        <li className="menu-item">
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/register">
             <Button>Create Account</Button>
           </Link>
@@ -82,7 +82,7 @@ const NavBarComponent = () => {
   const renderGreeting = () => {
     if ( user ) {
       return(
-        <li className="menu-item">
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/myprofile">
             <FaUserCircle/>
           </Link>
@@ -97,7 +97,7 @@ const NavBarComponent = () => {
   const renderChatIcon = () => {
     if (user) {
       return (
-        <li className="menu-item">
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/myChats">
             <AiFillMessage/>
              
@@ -136,7 +136,7 @@ const NavBarComponent = () => {
   const renderNotificationIcon =() =>{
     if ( user ) {
       return(
-        <li className="menu-item">
+        <li className="menu-item" onClick={closeMobileMenu}>
           <div ref={ref}>
             <Link className="nav-menu-link" to="/" onClick={notificationClick}>
               <AiFillBell/>
@@ -170,7 +170,7 @@ const NavBarComponent = () => {
   const renderDashboardButton = () => {
     if (checkAccess('P0001')) {
       return (
-        <li className="menu-item">
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/dashboard">
             <span type="submit">{`Dashboard`}</span>
           </Link>
@@ -185,7 +185,7 @@ const NavBarComponent = () => {
   
 
 	return (
-		<div className="navbar-stick">
+		<div className="navbar-stick" >
 			<div className={scrolled || click ? 'navbar navbar-coloured' : 'navbar'}>
 				<div className="navbar-container">
 					<Link to="/" className="navbar-logo">
