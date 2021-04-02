@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import {React, useContext, useState} from 'react';
+=======
+import React, { useState, useContext, useEffect } from 'react';
+>>>>>>> origin/main
 import './Profile.scss'
 import { RiAdvertisementLine } from 'react-icons/ri';
 import { MdCardMembership, MdFavoriteBorder } from 'react-icons/md';
@@ -17,13 +21,13 @@ import MyInvoices from './MyInvoices';
 import PostedJobs from './PostedJobs';
 import MyFavourites from './MyFavourites';
 import AppliedJobs from './AppliedJobs';
-import Button from '../Button/Button';
-import { AuthContext } from '../../context/AuthContext'
+import Button from '../Button/Button'
+import { AuthContext } from '../../context/AuthContext';
 
 
 export default function Profile() {
 
-    const {user, dispath} = useContext(AuthContext);
+    const { user, dispatch } = useContext(AuthContext);
     const [userType, setUserType] = useState(false);
     const [menu, setMenu] = useState(false);
 
@@ -145,7 +149,7 @@ export default function Profile() {
 
                     <div className="myprofile-content-info">
                         <Route path="/myprofile/"  exact>
-                            <BasicInfo user = {user} />
+                            <BasicInfo user={user}/>
                         </Route>
                         <Route path="/myprofile/myads"  exact component={MyAds} />
                         <Route path="/myprofile/myfavourites"  exact component={MyFavourites} />

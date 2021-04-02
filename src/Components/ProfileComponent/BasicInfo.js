@@ -1,64 +1,64 @@
 import Button from '../Button/Button'
+import React, { useState, useEffect} from 'react';
 import './BasicInfo.scss'
-import React, { useEffect } from 'react'
+import Axios from "axios";
 import { getUser } from '../../api/userApi/userApi';
-import { useState } from 'react';
 
 const BasicInfo = ({
-    user 
+    user
 }) => {
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [location, setLocation] = useState('');
-    const [phoneNo, setPhoneNo] = useState('');
+    const [name, setname] = useState('');
+    const [email, setemail] = useState('');
+    const [location, setlocation] = useState('');
+    const [telNo, settelNo] = useState('');
 
     useEffect(() => {
-        getUser({_id: user.id})
-        .then(res => {
-            console.log(res.data);
-            setName(res.data.user.name);
-            setLocation(res.data.user.location);
-            setPhoneNo(res.data.user.contactNo);
-            setEmail(res.data.user.email);
-        });
-    }, [])
+      //console.log(user.id);
+      getUser({_id: user.id})
+      .then(res => {
+        let curruser = res.data.user
+          console.log(curruser.id);
+          setname(curruser.name);
+          setemail(curruser.email);
+          setlocation(curruser.location);
+          settelNo(curruser.contactNo);
+      })  
+    }, []);
 
     return (
-        <div>
-            <div className="basicinfo-container">
-                <h3 className="basic-info-title">Basic Info</h3>
-                
-                <div className="basic-info-content">
-                    <div>
-                        <p className="basic-info-details">{name}</p> 
-                        <p className="basic-info-details-content">Sanjana</p>
-                    </div>
-    
-                    <div>
-                        <p className="basic-info-details">Last Name</p>
-                        <p className="basic-info-details-content">Ganegoda</p>
-                    </div>
-    
-                    <div>
-                    <p className="basic-info-details">Email Address</p>
-                    <p className="basic-info-details-content">{email}</p>
-                    </div>
-    
-                    <div>
-                    <p className="basic-info-details">District</p>
-                    <p className="basic-info-details-content">{location}</p>
-                    </div>
-    
-                    <div>
-                    <p className="basic-info-details">City</p>
-                    <p className="basic-info-details-content">Piliyandala</p>
-                    </div>
-    
-                    <div>
-                    <p className="basic-info-details">{phoneNo}</p>
-                    <p className="basic-info-details-content">0716308090</p>
-                    </div>
+        <div className="basicinfo-container">
+            <h3 className="basic-info-title">Basic Info</h3>
+            
+            <div className="basic-info-content">
+                <div>
+                    <p className="basic-info-details">First Name</p> 
+                    <p className="basic-info-details-content">{ name.split(" ", 1) }</p>
+                </div>
+
+                <div>
+                    <p className="basic-info-details">Last Name</p>
+                    <p className="basic-info-details-content">{ name }</p>
+                </div>
+
+                <div>
+                <p className="basic-info-details">Email Address</p>
+                <p className="basic-info-details-content">{ email }</p>
+                </div>
+
+                <div>
+                <p className="basic-info-details">District</p>
+                <p className="basic-info-details-content">{ location }</p>
+                </div>
+
+                <div>
+                <p className="basic-info-details">City</p>
+                <p className="basic-info-details-content">{ location }</p>
+                </div>
+
+                <div>
+                <p className="basic-info-details">Phone Number</p>
+                <p className="basic-info-details-content">{ telNo }</p>
                 </div>
             </div>
         
@@ -66,5 +66,5 @@ const BasicInfo = ({
     )
 }
 
-export default BasicInfo
+export default BasicInfo;
 

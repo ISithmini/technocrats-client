@@ -16,9 +16,9 @@ export const logOut = () => {
 } 
 
 export const getUser = ({_id}) => {
-    return api.get('/user/basic-details',{
-        params : {
-            _id: _id,
-        }
-    }); 
+  return api.get('/user/basic-details', {
+    params: {
+      _id: _id,
+    }
+  });
 }
