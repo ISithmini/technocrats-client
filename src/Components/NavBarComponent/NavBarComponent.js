@@ -7,15 +7,12 @@ import { checkAccess } from '../../helpers/authentication';
 //import Button from '../Button/Button';
 import './NavBarComponent.css';
 import Button from '../Button/Button';
-<<<<<<< HEAD
 import { AiFillMessage }  from "react-icons/ai";
 
-=======
 import { AiFillBell } from "react-icons/ai";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
 import NotificationModal from '../NotificationComponent/NotificationModal';
->>>>>>> origin/main
 
 const NavBarComponent = () => {
 
