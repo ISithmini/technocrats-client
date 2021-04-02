@@ -48,18 +48,24 @@
 .nav-menu {
   display: flex;
   width: max-content;
+  float: right;
   align-items: center;
   justify-content: space-between;
   transition: 0.3s;
-  justify-content: space-evenly;
 }
 
 .nav-menu ul {
   padding-left: 0;
 }
 
+.nav-menu-icon-sec {
+  display: flex;
+  justify-content: center;
+}
+
 .menu-button-section {
-  margin-left: 60px;
+  margin-left: 0px;
+  display: flex;
 }
 
 .menu-item {
@@ -123,6 +129,7 @@
 
   .menu-button-section {
     margin-left: 0px;
+    display: block;
   }
 
   .nav-menu.active {
