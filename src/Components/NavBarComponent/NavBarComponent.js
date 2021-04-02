@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthContext';
@@ -7,8 +7,15 @@ import { checkAccess } from '../../helpers/authentication';
 //import Button from '../Button/Button';
 import './NavBarComponent.css';
 import Button from '../Button/Button';
+<<<<<<< HEAD
 import { AiFillMessage }  from "react-icons/ai";
 
+=======
+import { AiFillBell } from "react-icons/ai";
+import Popover from 'react-bootstrap/Popover';
+import Overlay from 'react-bootstrap/Overlay';
+import NotificationModal from '../NotificationComponent/NotificationModal';
+>>>>>>> origin/main
 
 const NavBarComponent = () => {
 
@@ -107,6 +114,59 @@ const NavBarComponent = () => {
     }
   }
 
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef();
+
+  useEffect(()=>{
+    document.addEventListener('mousedown', (event) =>{
+      if(!ref.current.contains(event.target))
+        setShow(false);
+    } );
+  })
+
+
+  const notificationClick = (event) => {
+      setShow(!show);
+      setTarget(event.target); 
+  };
+  
+  
+
+  const renderNotificationIcon =() =>{
+    if ( user ) {
+      return(
+        <li className="menu-item">
+          <div ref={ref}>
+            <Link className="nav-menu-link" to="/" onClick={notificationClick}>
+              <AiFillBell/>
+            </Link>
+            {show && (
+              <Overlay show={show} target={target} placement="bottom" container={ref.current} containerPadding={20} >
+                  <Popover id="popover-contained">
+                    <Popover.Title as="h2" className='notifications-title'>Notifications</Popover.Title>
+                      <Popover.Content>
+                        <NotificationModal/>
+                      </Popover.Content>
+                  </Popover>
+                </Overlay>   
+            )}
+                    
+          </div>
+        </li>
+        
+      ) ;
+    } else {
+      return (
+        <span></span>
+      );
+    }
+
+  }
+
+
+
+
   const renderDashboardButton = () => {
     if (checkAccess('P0001')) {
       return (
@@ -155,6 +215,7 @@ const NavBarComponent = () => {
 						<ul className="menu-button-section">
 							
 							{ renderGreeting() }
+              {renderNotificationIcon()}
 							{ renderDashboardButton() }
 							{ renderLoginButton() }
 							{ renderCreateAccountButton() }
@@ -167,5 +228,6 @@ const NavBarComponent = () => {
 		</div>
 	);
 }
+
 
 export default NavBarComponent;
