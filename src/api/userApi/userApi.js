@@ -14,3 +14,11 @@ export const logIn = ({ email, password }) => {
 export const logOut = () => {
   return api.get('/user/logout');
 } 
+
+export const getUser = ({_id}) => {
+    return api.get('/user/basic-details',{
+        params : {
+            _id: _id,
+        }
+    }); 
+}

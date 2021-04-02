@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useContext, useState} from 'react';
 import './Profile.scss'
 import { RiAdvertisementLine } from 'react-icons/ri';
 import { MdCardMembership, MdFavoriteBorder } from 'react-icons/md';
@@ -9,7 +9,7 @@ import { FaFileInvoiceDollar } from 'react-icons/fa';
 import { HiOutlineLogout } from 'react-icons/hi';
 import { RiLockPasswordLine ,RiMenuUnfoldLine, RiMenuFoldLine} from 'react-icons/ri';
 import BasicInfo from './BasicInfo';
-import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import MyAds from './MyAds';
 import MyMembership from './MyMembership';
 import MyChats from './MyChats';
@@ -17,10 +17,13 @@ import MyInvoices from './MyInvoices';
 import PostedJobs from './PostedJobs';
 import MyFavourites from './MyFavourites';
 import AppliedJobs from './AppliedJobs';
-import Button from '../Button/Button'
+import Button from '../Button/Button';
+import { AuthContext } from '../../context/AuthContext'
 
 
 export default function Profile() {
+
+    const {user, dispath} = useContext(AuthContext);
     const [userType, setUserType] = useState(false);
     const [menu, setMenu] = useState(false);
 
@@ -141,7 +144,9 @@ export default function Profile() {
                     </div>
 
                     <div className="myprofile-content-info">
-                        <Route path="/myprofile/"  exact component={BasicInfo} />
+                        <Route path="/myprofile/"  exact>
+                            <BasicInfo user = {user} />
+                        </Route>
                         <Route path="/myprofile/myads"  exact component={MyAds} />
                         <Route path="/myprofile/myfavourites"  exact component={MyFavourites} />
                         <Route path="/myprofile/mymembership"  exact component={MyMembership} />
