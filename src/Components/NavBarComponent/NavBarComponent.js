@@ -6,6 +6,9 @@ import { logOut } from '../../api/userApi/userApi';
 import { checkAccess } from '../../helpers/authentication';
 //import Button from '../Button/Button';
 import './NavBarComponent.css';
+import Button from '../Button/Button';
+import { AiFillMessage }  from "react-icons/ai";
+
 
 const NavBarComponent = () => {
 
@@ -41,15 +44,15 @@ const NavBarComponent = () => {
       return(
         <li className="menu-item">
           <Link className="nav-menu-link" to="/Login">
-            <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Log in</button>
+          <Button buttonType="outline">Log in</Button>
           </Link>
         </li>
       ) 
     } else {
       return (
-        <li className="menu-item">
+        <li className="menu-item" onClick={handleLogin}>
           <Link className="nav-menu-link" to="" >
-            <button onClick={handleLogin} className="btn btn-outline-primary my-2 my-sm-0" type="submit">Log out</button>
+            <Button buttonType="outline">Log out</Button>
           </Link>
         </li>
       )
@@ -61,7 +64,7 @@ const NavBarComponent = () => {
       return(
         <li className="menu-item">
           <Link className="nav-menu-link" to="/register">
-            <button className="btn btn-primary my-2 my-sm-0" type="submit">Create Account</button>
+            <Button>Create Account</Button>
           </Link>
         </li>
       ) 
@@ -76,11 +79,27 @@ const NavBarComponent = () => {
     if ( user ) {
       return(
         <li className="menu-item">
-          <Link className="nav-menu-link" to="/">
+          <Link className="nav-menu-link" to="/myprofile">
             {`Hey, ${user.name}`}
           </Link>
         </li>
       ) 
+    } else {
+      return (
+        <span></span>
+      )
+    }
+  }
+  const renderChatIcon = () => {
+    if (user) {
+      return (
+        <li className="menu-item">
+          <Link className="nav-menu-link" to="/myChats">
+            <AiFillMessage/>
+             
+          </Link>
+        </li>
+      )
     } else {
       return (
         <span></span>
@@ -139,6 +158,7 @@ const NavBarComponent = () => {
 							{ renderDashboardButton() }
 							{ renderLoginButton() }
 							{ renderCreateAccountButton() }
+              {renderChatIcon() }
 							
 						</ul>
 					</div>

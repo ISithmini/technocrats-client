@@ -1,10 +1,9 @@
 .primary {
-  padding: 8px 20px;
-  border-radius: 5px;
   outline: none;
   border: 1px solid #fff;
-  font-size: 1.1em;
-  transition: 0.3s;
+  font-size: 1em;
+  transition: 0.3s; 
+  font-weight: 600;
 }
 
 .primary:hover {
@@ -13,20 +12,109 @@
   border: 1px solid #fff;
 }
 
-.outLine {
-  padding: 8px 20px;
-  border: 1px solid var(--primaryColour);
+.primary-float {
+  outline: none;
+  border: 1px solid #fff;
+  font-size: 1em;
+  transition: 0.3s; 
+  font-weight: 600;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.primary-float:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.685);
+}
+
+.outline {
+  border: 1px solid #fff;
   background-color: transparent;
-  color: var(--primaryColour);
-  border-radius: 5px;
-  font-size: 1.1em;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
   transition: 0.3s;
 }
 
-.outLine:hover {
-  background-color: var(--primaryColour);
-  color: rgb(233, 233, 233);
+.outline:hover {
+  background-color: #fff;
+  color: rgb(46, 46, 46);
 }
 
 
+.medium {
+  padding: 4px 14px;
+  border-radius: 5px;
+}
+
+.small {
+  padding: 2px 8px;
+  font-size: 0.8em;
+  border-radius: 3px;
+}
+
+.large {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 1.3em;
+}
+
+.wide {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+/* //////////////////////////////////////////////////////// */
+
+.primary.dark-blue {
+  background-color: var(--primaryColour);
+  color: #fff;
+  border: 1px solid var(--primaryColour);
+}
+
+.primary.dark-blue:hover {
+  background-color: transparent;
+  color: var(--primaryColour);
+  border: 1px solid var(--primaryColour);
+}
+
+.outline.dark-blue {
+  background-color: transparent;
+  color: var(--primaryColour);
+  border: 1px solid var(--primaryColour);
+}
+
+.outline.dark-blue:hover {
+  background-color: var(--primaryColour);
+  color: #fff;
+  border: 1px solid var(--primaryColour);
+}
+
+
+/* ////////////////////////////////////////////////////////// */
+
+.primary.grey {
+  background-color: var(--grey);
+  color: #fff;
+  border: 1px solid var(--grey);
+}
+
+.primary.grey:hover {
+  background-color: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+}
+
+.outline.grey {
+  background-color: transparent;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+}
+
+.outline.grey:hover {
+  background-color: var(--grey);
+  color: #fff;
+  border: 1px solid var(--grey);
+}
 

@@ -11,6 +11,8 @@ import Unauthorized from './helpers/Unauthorized';
 import JobSearch from './Containers/JobSearch';
 import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import Dashboard from './Containers/Dashboard';
+import Profile from './Components/ProfileComponent/Profile';
+import ChatModule from './Components/ChatComponent/subcomponents/ChatModule'
 
 function App() {
 
@@ -21,6 +23,7 @@ function App() {
           <NavBarComponent/>
           <Switch> 
             <Route path='/' exact component={ Home }/>
+            <Route path='/myprofile'  component={ Profile }/>
             <Route path='/login' exact component={ Login }/>
             <Route path='/register' exact component={ CreateAccount }/>
             <Route path='/jobs' exact component={ JobSearch }/>
@@ -33,6 +36,7 @@ function App() {
                   permissionCode={['P0001']}/>
               )}/>
             <Route path='/unauthorized' component={ Unauthorized }/>
+            <Route path="/myChats" exact component={ ChatModule } />
           </Switch>
         </AuthContextProvider>
         
