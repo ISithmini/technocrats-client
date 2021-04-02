@@ -7,10 +7,15 @@ import { checkAccess } from '../../helpers/authentication';
 //import Button from '../Button/Button';
 import './NavBarComponent.css';
 import Button from '../Button/Button';
+<<<<<<< HEAD
+import { AiFillMessage }  from "react-icons/ai";
+
+=======
 import { AiFillBell } from "react-icons/ai";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
 import NotificationModal from '../NotificationComponent/NotificationModal';
+>>>>>>> origin/main
 
 const NavBarComponent = () => {
 
@@ -86,6 +91,22 @@ const NavBarComponent = () => {
           </Link>
         </li>
       ) 
+    } else {
+      return (
+        <span></span>
+      )
+    }
+  }
+  const renderChatIcon = () => {
+    if (user) {
+      return (
+        <li className="menu-item">
+          <Link className="nav-menu-link" to="/myChats">
+            <AiFillMessage/>
+             
+          </Link>
+        </li>
+      )
     } else {
       return (
         <span></span>
@@ -200,6 +221,7 @@ const NavBarComponent = () => {
 							{ renderDashboardButton() }
 							{ renderLoginButton() }
 							{ renderCreateAccountButton() }
+              {renderChatIcon() }
 							
 						</ul>
 					</div>
