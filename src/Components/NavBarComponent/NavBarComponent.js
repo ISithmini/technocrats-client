@@ -51,7 +51,7 @@ const NavBarComponent = () => {
       return(
         <li className="menu-item">
           <Link className="nav-menu-link" to="/Login">
-          <Button buttonType="outline">Log in</Button>
+            <Button buttonType="outline">Log in</Button>
           </Link>
         </li>
       ) 
@@ -120,8 +120,10 @@ const NavBarComponent = () => {
 
   useEffect(()=>{
     document.addEventListener('mousedown', (event) =>{
+     if(ref.current != undefined) {
       if(!ref.current.contains(event.target))
-        setShow(false);
+      setShow(false);
+     }
     } );
   })
 
