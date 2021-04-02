@@ -7,8 +7,8 @@ import { checkAccess } from '../../helpers/authentication';
 //import Button from '../Button/Button';
 import './NavBarComponent.css';
 import Button from '../Button/Button';
-
 import { AiFillMessage }  from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
 import { AiFillBell } from "react-icons/ai";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
@@ -84,7 +84,7 @@ const NavBarComponent = () => {
       return(
         <li className="menu-item">
           <Link className="nav-menu-link" to="/myprofile">
-            {`Hey, ${user.name}`}
+            <FaUserCircle/>
           </Link>
         </li>
       ) 
@@ -195,7 +195,7 @@ const NavBarComponent = () => {
 						{click ? <FaTimes /> : <FaBars />}
 					</div>
 					<div className={click ? 'nav-menu active' : 'nav-menu'}>
-						<ul>
+            <ul className="menu-button-section">
 							<li className="menu-item">
 								<NavLink to="/jobs" className="nav-menu-link" onClick={closeMobileMenu}>
 								Jobs
@@ -211,15 +211,13 @@ const NavBarComponent = () => {
 								About us
 								</NavLink>
 							</li>
-						</ul>
-						<ul className="menu-button-section">
 							
-							{ renderGreeting() }
-              {renderNotificationIcon()}
 							{ renderDashboardButton() }
+              { renderGreeting() }
+              {renderNotificationIcon()}
+              {renderChatIcon() }
 							{ renderLoginButton() }
 							{ renderCreateAccountButton() }
-              {renderChatIcon() }
 							
 						</ul>
 					</div>
