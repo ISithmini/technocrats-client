@@ -43,7 +43,7 @@ const NavBarComponent = () => {
       return(
         <li className="menu-item">
           <Link className="nav-menu-link" to="/Login">
-          <Button buttonType="outline">Log in</Button>
+            <Button buttonType="outline">Log in</Button>
           </Link>
         </li>
       ) 
