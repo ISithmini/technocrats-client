@@ -12,11 +12,8 @@ import JobSearch from './Containers/JobSearch';
 import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import Dashboard from './Containers/Dashboard';
 import Profile from './Components/ProfileComponent/Profile';
-<<<<<<< HEAD
 import JobFormComponent from './Components/JobComponents/JobFormComponent/JobFormComponent';
-=======
 import ChatModule from './Components/ChatComponent/subcomponents/ChatModule'
->>>>>>> origin/main
 
 function App() {
 
