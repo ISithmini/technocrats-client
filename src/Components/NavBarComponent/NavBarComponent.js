@@ -99,8 +99,10 @@ const NavBarComponent = () => {
 
   useEffect(()=>{
     document.addEventListener('mousedown', (event) =>{
+     if(ref.current != undefined) {
       if(!ref.current.contains(event.target))
-        setShow(false);
+      setShow(false);
+     }
     } );
   })
 
