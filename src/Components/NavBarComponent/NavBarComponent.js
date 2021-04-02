@@ -7,15 +7,12 @@ import { checkAccess } from '../../helpers/authentication';
 //import Button from '../Button/Button';
 import './NavBarComponent.css';
 import Button from '../Button/Button';
-<<<<<<< HEAD
-import { AiFillMessage }  from "react-icons/ai";
 
-=======
+import { AiFillMessage }  from "react-icons/ai";
 import { AiFillBell } from "react-icons/ai";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
 import NotificationModal from '../NotificationComponent/NotificationModal';
->>>>>>> origin/main
 
 const NavBarComponent = () => {
 
@@ -51,7 +48,7 @@ const NavBarComponent = () => {
       return(
         <li className="menu-item">
           <Link className="nav-menu-link" to="/Login">
-            <Button buttonType="outline">Log in</Button>
+          <Button buttonType="outline">Log in</Button>
           </Link>
         </li>
       ) 
@@ -116,17 +113,18 @@ const NavBarComponent = () => {
 
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
-  const ref = useRef();
+  const ref = useRef(null);
 
   useEffect(()=>{
-    document.addEventListener('mousedown', (event) =>{
-     if(ref.current != undefined) {
-      if(!ref.current.contains(event.target))
-      setShow(false);
-     }
-    } );
-  })
-
+    if (user && show) {
+      document.addEventListener('mousedown', (event) =>{
+           if(!ref.current.contains(event.target))
+               setShow(false);
+       } );
+    } else {
+      document.removeEventListener('mousedown', () => {});
+    }
+  }, [show]);
 
   const notificationClick = (event) => {
       setShow(!show);
