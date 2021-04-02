@@ -9,7 +9,7 @@ import { FaFileInvoiceDollar } from 'react-icons/fa';
 import { HiOutlineLogout } from 'react-icons/hi';
 import { RiLockPasswordLine ,RiMenuUnfoldLine, RiMenuFoldLine} from 'react-icons/ri';
 import BasicInfo from './BasicInfo';
-import { BrowserRouter, Link, NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import MyAds from './MyAds';
 import MyMembership from './MyMembership';
 import MyChats from './MyChats';
