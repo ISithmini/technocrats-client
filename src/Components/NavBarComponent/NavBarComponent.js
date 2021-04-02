@@ -196,7 +196,7 @@ const NavBarComponent = () => {
 					</div>
 					<div className={click ? 'nav-menu active' : 'nav-menu'}>
             <ul className="menu-button-section">
-							<li className="menu-item">
+							{/* <li className="menu-item">
 								<NavLink to="/jobs" className="nav-menu-link" onClick={closeMobileMenu}>
 								Jobs
 								</NavLink>
@@ -205,7 +205,7 @@ const NavBarComponent = () => {
 								<NavLink to="/seekers" className="nav-menu-link" onClick={closeMobileMenu}>
 								Freelancers
 								</NavLink>
-							</li>
+							</li> */}
 							<li className="menu-item">
 								<NavLink to="" className="nav-menu-link" onClick={closeMobileMenu}>
 								About us
