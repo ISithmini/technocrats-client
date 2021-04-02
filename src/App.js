@@ -12,6 +12,7 @@ import JobSearch from './Containers/JobSearch';
 import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import Dashboard from './Containers/Dashboard';
 import Profile from './Components/ProfileComponent/Profile';
+import JobFormComponent from './Components/JobComponents/JobFormComponent/JobFormComponent';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path='/login' exact component={ Login }/>
             <Route path='/register' exact component={ CreateAccount }/>
             <Route path='/jobs' exact component={ JobSearch }/>
+            <Route path='/post-a-job' exact component={ JobFormComponent }/>
             <Route 
               path='/dashboard' 
               render = {props => (
