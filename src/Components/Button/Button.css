@@ -86,12 +86,51 @@
 }
 
 .primary-float.dark-blue:hover {
+  background-color: var(--primaryColour);
+  color: #fff;
+  border: 1px solid var(--primaryColour);
+}
+
+.outline.dark-blue {
   background-color: transparent;
   color: var(--primaryColour);
   border: 1px solid var(--primaryColour);
 }
 
-.outline.dark-blue {
+.outline.dark-blue:hover {
+  background-color: var(--primaryColour);
+  color: #fff;
+  border: 1px solid var(--primaryColour);
+}
+
+
+/* //////////////////////////////////////////////////////// */
+
+.primary.light-blue {
+  background-color: var(--light-blue);
+  color: #fff;
+  border: 1px solid var(--light-blue);
+}
+
+.primary.light-blue:hover {
+  background-color: transparent;
+  color: var(--light-blue);
+  border: 1px solid var(--light-blue);
+}
+
+.primary-float.light-blue {
+  background-color: var(--light-blue);
+  color: #fff;
+  border: 1px solid var(--light-blue);
+}
+
+.primary-float.light-blue:hover {
+  background-color: var(--light-blue);
+  color: #fff;
+  border: 1px solid var(--light-blue);
+}
+
+.outline.light-blue {
   background-color: transparent;
   color: var(--primaryColour);
   border: 1px solid var(--primaryColour);
