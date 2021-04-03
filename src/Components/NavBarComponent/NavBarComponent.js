@@ -1,9 +1,9 @@
-import React, { useContext, useState, useRef, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { FaTimes, FaBars } from 'react-icons/fa';
-import { AuthContext } from '../../context/AuthContext';
-import { logOut } from '../../api/userApi/userApi';
-import { checkAccess } from '../../helpers/authentication';
+import React, { useContext, useState, useRef, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { FaTimes, FaBars } from "react-icons/fa";
+import { AuthContext } from "../../context/AuthContext";
+import { logOut } from "../../api/userApi/userApi";
+import { checkAccess } from "../../helpers/authentication";
 //import Button from '../Button/Button';
 import './NavBarComponent.css';
 import Button from '../Button/Button';
@@ -15,33 +15,33 @@ import Overlay from 'react-bootstrap/Overlay';
 import NotificationModal from '../NotificationComponent/NotificationModal';
 
 const NavBarComponent = () => {
+  const { user, dispatch } = useContext(AuthContext);
 
-	const { user, dispatch } = useContext(AuthContext);
+  const [click, setClick] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
-	const [click, setClick] = useState(false);
-	const [scrolled, setScrolled] = useState(false);
-	const [isSignedIn, setIsSignedIn] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
-	const handleClick = () => setClick(!click);
-	const closeMobileMenu = () => setClick(false);
+  const checkScrolled = () => {
+    if (
+      document.body.scrollTop > 10 ||
+      document.documentElement.scrollTop > 10
+    ) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+  window.addEventListener("scroll", checkScrolled, { passive: true });
 
-	const checkScrolled = () => {
-		if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-			setScrolled(true);
-		} else {
-			setScrolled(false);
-		}
-	};
-	window.addEventListener('scroll', checkScrolled, { passive: true });
-
-
-	const handleLogin = async () => {
-    await logOut().then(res =>{
+  const handleLogin = async () => {
+    await logOut().then((res) => {
       //console.log(res);
-      dispatch({ type: 'REMOVE_USER', user: '' });
-    })
-    
-  }
+      dispatch({ type: "REMOVE_USER", user: "" });
+    });
+  };
 
   const renderLoginButton = () => {
     if (! user ) {
@@ -51,7 +51,7 @@ const NavBarComponent = () => {
           <Button buttonType="outline">Log in</Button>
           </Link>
         </li>
-      ) 
+      );
     } else {
       return (
         <li className="menu-item" onClick={handleLogin} >
@@ -59,9 +59,9 @@ const NavBarComponent = () => {
             <Button buttonType="outline">Log out</Button>
           </Link>
         </li>
-      )
+      );
     }
-  }
+  };
 
   const renderCreateAccountButton = () => {
     if (! user ) {
@@ -71,13 +71,11 @@ const NavBarComponent = () => {
             <Button>Create Account</Button>
           </Link>
         </li>
-      ) 
+      );
     } else {
-      return (
-        <span></span>
-      )
+      return <span></span>;
     }
-  }
+  };
 
   const renderGreeting = () => {
     if ( user ) {
@@ -87,29 +85,24 @@ const NavBarComponent = () => {
             <FaUserCircle/>
           </Link>
         </li>
-      ) 
+      );
     } else {
-      return (
-        <span></span>
-      )
+      return <span></span>;
     }
-  }
+  };
   const renderChatIcon = () => {
     if (user) {
       return (
         <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/myChats">
-            <AiFillMessage/>
-             
+            <AiFillMessage />
           </Link>
         </li>
-      )
+      );
     } else {
-      return (
-        <span></span>
-      )
+      return <span></span>;
     }
-  }
+  };
 
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
@@ -127,11 +120,9 @@ const NavBarComponent = () => {
   }, [show]);
 
   const notificationClick = (event) => {
-      setShow(!show);
-      setTarget(event.target); 
+    setShow(!show);
+    setTarget(event.target);
   };
-  
-  
 
   const renderNotificationIcon =() =>{
     if ( user ) {
@@ -139,50 +130,47 @@ const NavBarComponent = () => {
         <li className="menu-item" onClick={closeMobileMenu}>
           <div ref={ref}>
             <Link className="nav-menu-link" to="/" onClick={notificationClick}>
-              <AiFillBell/>
+              <AiFillBell />
             </Link>
             {show && (
-              <Overlay show={show} target={target} placement="bottom" container={ref.current} containerPadding={20} >
-                  <Popover id="popover-contained">
-                    <Popover.Title as="h2" className='notifications-title'>Notifications</Popover.Title>
-                      <Popover.Content>
-                        <NotificationModal/>
-                      </Popover.Content>
-                  </Popover>
-                </Overlay>   
+              <Overlay
+                show={show}
+                target={target}
+                placement="bottom"
+                container={ref.current}
+                containerPadding={20}
+              >
+                <Popover id="popover-contained">
+                  <Popover.Title as="h2" className="notifications-title">
+                    Notifications
+                  </Popover.Title>
+                  <Popover.Content>
+                    <NotificationModal />
+                  </Popover.Content>
+                </Popover>
+              </Overlay>
             )}
-                    
           </div>
         </li>
-        
-      ) ;
-    } else {
-      return (
-        <span></span>
       );
+    } else {
+      return <span></span>;
     }
-
-  }
-
-
-
+  };
 
   const renderDashboardButton = () => {
-    if (checkAccess('P0001')) {
+    if (checkAccess("P0001")) {
       return (
         <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/dashboard">
             <span type="submit">{`Dashboard`}</span>
           </Link>
         </li>
-      )
+      );
     } else {
-      return (
-        <span></span>
-      )
+      return <span></span>;
     }
-  }
-  
+  };
 
 	return (
 		<div className="navbar-stick" >
