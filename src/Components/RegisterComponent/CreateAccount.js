@@ -159,6 +159,7 @@ const CreateAccount = () => {
               <div className="form-group locationInput" style={{float: "left"}}>
                 <lable className="form-group-lable">Location</lable>
                 { locationInput() }
+                <div></div>
                 <div className=" alert-danger" >
                     { locationError }
                 </div> 
@@ -173,6 +174,7 @@ const CreateAccount = () => {
                   name="password" type="password" 
                   placeholder="Enter a password"
                   onChange={(e) => {setPassword(e.target.value)}} />
+                  <div></div>
                   <div className=" alert-danger" >
                     { passwordError }
                 </div> 
@@ -185,6 +187,7 @@ const CreateAccount = () => {
                   name="rePassword" type="password" 
                   placeholder="Re-enter password"
                   onChange={(e) => {setRePassword(e.target.value)}} />
+                  <div></div>
                   <div className=" alert-danger" >
                     { passwordMatch }
                   </div>
