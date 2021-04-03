@@ -21,6 +21,7 @@ import Button from '../Button/Button'
 import { AuthContext } from '../../context/AuthContext';
 
 
+
 export default function Profile() {
 
     const { user, dispatch } = useContext(AuthContext);
@@ -154,6 +155,8 @@ export default function Profile() {
                         <Route path="/myprofile/myinvoices"  exact component={MyInvoices} />
                         <Route path="/myprofile/postedjobs"  exact component={PostedJobs} />
                         <Route path="/myprofile/appliedjobs"  exact component={AppliedJobs} />
+                   
+
                     </div>
                 </div>
         </div>

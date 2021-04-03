@@ -78,21 +78,7 @@ const NavBarComponent = () => {
     }
   }
 
-  const renderPostAdvertisement = () => {
-    if ( user ) {
-      return(
-        <li className="menu-item">
-          <Link className="nav-menu-link" to="/myprofile">
-            <Button>Post an Advertisement</Button>
-          </Link>
-        </li>
-      ) 
-    } else {
-      return (
-        <span></span>
-      )
-    }
-  }
+ 
   const renderGreeting = () => {
     if (user) {
       return (
@@ -233,7 +219,7 @@ const NavBarComponent = () => {
 							{ renderLoginButton() }
 							{ renderCreateAccountButton() }
               {renderChatIcon() }
-              {renderPostAdvertisement()}
+              
 							
 						</ul>
 					</div>

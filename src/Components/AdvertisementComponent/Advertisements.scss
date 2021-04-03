@@ -1,0 +1,138 @@
+.advertisements-container {
+  padding-top: 20px;
+}
+
+
+
+.advertisements-content {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.advertisements-categories {
+  height: 550px;
+  background-color: rgb(255, 255, 255);
+  margin: 3px;
+  justify-content: space-around;
+}
+
+.toggle-icon-show {
+  position: absolute;
+  // top: 6px;
+  left: 0;
+  color: rgb(233, 233, 233);
+  font-size: 1.2em;
+  padding-left: 10px;
+  padding-bottom: 3px;
+  // padding-top: 5px;
+  padding-right: 8px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: rgb(54, 55, 61);
+  display: none;
+  z-index: 999;
+  transition: 0.5s;
+}
+
+.toggle-icon-show.hide {
+  right: 8px;
+  text-align: right;
+  background-color: transparent;
+}
+
+.sidebar-title.active {
+  background-color: rgb(37, 80, 161);
+  color: white;
+  text-decoration: none !important;
+  border-left: 6px solid rgb(106, 220, 255);
+}
+
+.advertisements-heading {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: rgb(26, 54, 87);
+}
+
+.sidebar-title {
+  cursor: pointer;
+  display: flex;
+  width: 50%;
+  align-items: center !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+  border-radius: 0px 0px 20px 0px;
+  margin-bottom: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+ // padding-top: 15px;
+  //padding-bottom: 15px;
+  text-decoration: none !important;
+  justify-content: space-between !important;
+  color: rgb(241, 241, 241);
+  background-color: rgb(26, 54, 87);
+}
+.sidebar-title:hover {
+  background-color:#0e151f;
+
+  .sidebar-content {
+    color: white;
+  }
+}
+.sidebar-content {
+  display: flex;
+}
+
+.sidebar-icon {
+  font-size: 1em;
+  margin-right: 15px;
+  
+}
+
+.sidebar-title-txt {
+  font-size: 1.1em;
+  
+}
+
+@media screen and (max-width: 600px) {
+  .advertisements-heading {
+    font-size: 1.2em;
+  }
+  .toggle-icon-show {
+    display: block;
+    top: 175px;
+    left: 3px;
+  }
+
+  .advertisements-content-info {
+    width: 123%;
+    margin-left: -60px;
+  }
+
+  .sidebar-title {
+    font-size: 1.2em;
+  }
+
+  .toggle-icon-show.hide {
+    left: auto;
+    right: -2px;
+    top: 175px;
+    background: rgb(54, 55, 61);
+  }
+
+  .advertisements-categories {
+    width: 3em;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 10;
+    left: 100;
+  }
+
+  .advertisements-categories.active {
+    left: 0;
+    width: 100vw;
+  }
+}
