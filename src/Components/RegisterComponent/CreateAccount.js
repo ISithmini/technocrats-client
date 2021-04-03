@@ -137,6 +137,7 @@ const CreateAccount = () => {
                   type="email" 
                   placeholder="Enter your email"
                   onChange={(e) => {setEmail(e.target.value)}}/>
+                  <div></div>
                   <div className=" alert-danger" >
                     { emailError }
                   </div>
