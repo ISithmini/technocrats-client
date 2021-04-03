@@ -5,13 +5,14 @@ import { AuthContext } from "../../context/AuthContext";
 import { logOut } from "../../api/userApi/userApi";
 import { checkAccess } from "../../helpers/authentication";
 //import Button from '../Button/Button';
-import "./NavBarComponent.css";
-import Button from "../Button/Button";
-import { AiFillMessage } from "react-icons/ai";
+import './NavBarComponent.css';
+import Button from '../Button/Button';
+import { AiFillMessage }  from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
 import { AiFillBell } from "react-icons/ai";
-import Popover from "react-bootstrap/Popover";
-import Overlay from "react-bootstrap/Overlay";
-import NotificationModal from "../NotificationComponent/NotificationModal";
+import Popover from 'react-bootstrap/Popover';
+import Overlay from 'react-bootstrap/Overlay';
+import NotificationModal from '../NotificationComponent/NotificationModal';
 
 const NavBarComponent = () => {
   const { user, dispatch } = useContext(AuthContext);
@@ -43,18 +44,18 @@ const NavBarComponent = () => {
   };
 
   const renderLoginButton = () => {
-    if (!user) {
-      return (
-        <li className="menu-item">
+    if (! user ) {
+      return(
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/Login">
-            <Button buttonType="outline">Log in</Button>
+          <Button buttonType="outline">Log in</Button>
           </Link>
         </li>
       );
     } else {
       return (
-        <li className="menu-item" onClick={handleLogin}>
-          <Link className="nav-menu-link" to="">
+        <li className="menu-item" onClick={handleLogin} >
+          <Link className="nav-menu-link" to="" >
             <Button buttonType="outline">Log out</Button>
           </Link>
         </li>
@@ -63,9 +64,9 @@ const NavBarComponent = () => {
   };
 
   const renderCreateAccountButton = () => {
-    if (!user) {
-      return (
-        <li className="menu-item">
+    if (! user ) {
+      return(
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/register">
             <Button>Create Account</Button>
           </Link>
@@ -77,11 +78,11 @@ const NavBarComponent = () => {
   };
 
   const renderGreeting = () => {
-    if (user) {
-      return (
-        <li className="menu-item">
+    if ( user ) {
+      return(
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/myprofile">
-            {`Hey, ${user.name}`}
+            <FaUserCircle/>
           </Link>
         </li>
       );
@@ -92,7 +93,7 @@ const NavBarComponent = () => {
   const renderChatIcon = () => {
     if (user) {
       return (
-        <li className="menu-item">
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/myChats">
             <AiFillMessage />
           </Link>
@@ -105,25 +106,28 @@ const NavBarComponent = () => {
 
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
-  const ref = useRef();
+  const ref = useRef(null);
 
-  useEffect(() => {
-    document.addEventListener("mousedown", (event) => {
-      if (ref.current != undefined) {
-        if (!ref.current.contains(event.target)) setShow(false);
-      }
-    });
-  });
+  useEffect(()=>{
+    if (user && show) {
+      document.addEventListener('mousedown', (event) =>{
+           if(!ref.current.contains(event.target))
+               setShow(false);
+       } );
+    } else {
+      document.removeEventListener('mousedown', () => {});
+    }
+  }, [show]);
 
   const notificationClick = (event) => {
     setShow(!show);
     setTarget(event.target);
   };
 
-  const renderNotificationIcon = () => {
-    if (user) {
-      return (
-        <li className="menu-item">
+  const renderNotificationIcon =() =>{
+    if ( user ) {
+      return(
+        <li className="menu-item" onClick={closeMobileMenu}>
           <div ref={ref}>
             <Link className="nav-menu-link" to="/" onClick={notificationClick}>
               <AiFillBell />
@@ -157,7 +161,7 @@ const NavBarComponent = () => {
   const renderDashboardButton = () => {
     if (checkAccess("P0001")) {
       return (
-        <li className="menu-item">
+        <li className="menu-item" onClick={closeMobileMenu}>
           <Link className="nav-menu-link" to="/dashboard">
             <span type="submit">{`Dashboard`}</span>
           </Link>
@@ -168,59 +172,48 @@ const NavBarComponent = () => {
     }
   };
 
-  return (
-    <div className="navbar-stick">
-      <div className={scrolled || click ? "navbar navbar-coloured" : "navbar"}>
-        <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
-            TECHNOCRATES
-          </Link>
-          <div className="menu-icon" onClick={handleClick}>
-            {click ? <FaTimes /> : <FaBars />}
-          </div>
-          <div className={click ? "nav-menu active" : "nav-menu"}>
-            <ul>
-              <li className="menu-item">
-                <NavLink
-                  to="/jobs"
-                  className="nav-menu-link"
-                  onClick={closeMobileMenu}
-                >
-                  Jobs
-                </NavLink>
-              </li>
-              <li className="menu-item">
-                <NavLink
-                  to="/seekers"
-                  className="nav-menu-link"
-                  onClick={closeMobileMenu}
-                >
-                  Freelancers
-                </NavLink>
-              </li>
-              <li className="menu-item">
-                <NavLink
-                  to=""
-                  className="nav-menu-link"
-                  onClick={closeMobileMenu}
-                >
-                  About us
-                </NavLink>
-              </li>
-            </ul>
+	return (
+		<div className="navbar-stick" >
+			<div className={scrolled || click ? 'navbar navbar-coloured' : 'navbar'}>
+				<div className="navbar-container">
+					<Link to="/" className="navbar-logo">
+					TECHNOCRATES
+					</Link>
+					<div className="menu-icon" onClick={handleClick}>
+						{click ? <FaTimes /> : <FaBars />}
+					</div>
+					<div className={click ? 'nav-menu active' : 'nav-menu'}>
             <ul className="menu-button-section">
-              {renderGreeting()}
+							{/* <li className="menu-item">
+								<NavLink to="/jobs" className="nav-menu-link" onClick={closeMobileMenu}>
+								Jobs
+								</NavLink>
+							</li>
+							<li className="menu-item">
+								<NavLink to="/seekers" className="nav-menu-link" onClick={closeMobileMenu}>
+								Freelancers
+								</NavLink>
+							</li> */}
+							<li className="menu-item">
+								<NavLink to="" className="nav-menu-link" onClick={closeMobileMenu}>
+								About us
+								</NavLink>
+							</li>
+							
+							{ renderDashboardButton() }
+              { renderGreeting() }
               {renderNotificationIcon()}
-              {renderDashboardButton()}
-              {renderLoginButton()}
-              {renderCreateAccountButton()}
-              {renderChatIcon()}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+              {renderChatIcon() }
+							{ renderLoginButton() }
+							{ renderCreateAccountButton() }
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+}
+
 
 export default NavBarComponent;

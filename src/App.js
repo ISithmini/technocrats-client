@@ -13,7 +13,7 @@ import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import Dashboard from './Containers/Dashboard';
 import Profile from './Components/ProfileComponent/Profile';
 import JobFormComponent from './Components/JobComponents/JobFormComponent/JobFormComponent';
-import ChatModule from './Components/ChatComponent/subcomponents/ChatModule';
+import ChatModule from './Components/ChatComponent/subcomponents/ChatModule'
 
 function App() {
 
