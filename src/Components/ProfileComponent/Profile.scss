@@ -135,3 +135,34 @@
     width: 100vw;
   }
 }
+//advertisement sub catogories styling
+.advertisements-content{
+  display: grid;
+  grid-template-rows: flex;
+  
+
+}
+
+.advertisements-categories {
+  height: 550px;
+ background-color: rgb(26, 54, 87);
+  margin: 0px;
+  justify-content: space-around;
+}
+
+.advertisements-sidebar-title:hover {
+  background-color:  rgb(26, 54, 87) !important;
+
+  .sidebar-content {
+    color: white;
+  }
+}
+.advertisements-sidebar-title.active {
+  background-color: rgb(37, 80, 161);
+  color: white;
+  text-decoration: none !important;
+  border-left: 6px solid  rgb(26, 54, 87) !important;
+}
+
+
+

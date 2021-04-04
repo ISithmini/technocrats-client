@@ -14,7 +14,7 @@ import FinishedAds from './FinishedAds';
 import DraftsAds from './DraftsAds';
 import Button from '../Button/Button'
 import { IoIosAddCircle } from "react-icons/io";
-import Testing from './Testing';
+
 
 
 
@@ -111,7 +111,7 @@ export default function Advertisements() {
                     <Route path="/advertisements/ongoingads" exact component={OngoingAds} />
                     <Route path="/advertisements/finishedads" exact component={FinishedAds} />
                     <Route path="/advertisements/draftsads" exact component={DraftsAds} />
-                    <Route path="/advertisements/testing" exact component={Testing} />
+                    
                     
                 </div>
             </div>
