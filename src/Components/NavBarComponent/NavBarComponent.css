@@ -1,6 +1,7 @@
 :root {
   --primaryColour: rgb(26, 54, 87);
   --grey: rgb(90, 90, 90);
+  --light-blue: rgb(6, 109, 206);
 }
 
 .navbar {
@@ -133,8 +134,7 @@
   .menu-button-section {
     margin-left: 0px;
     display: block;
-    border: 1px solid rgb(235, 235, 235);
-    padding: 25px;
+    padding: 30px;
     padding-left: 25px !important;
     box-sizing: border-box;
     border-radius: 10px;
@@ -147,11 +147,13 @@
   .menu-item {
     display: block;
     position: relative;
-    width: max-content;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 5px;
     margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgb(179, 179, 179);
   }
 }
 

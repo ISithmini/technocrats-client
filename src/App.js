@@ -30,14 +30,11 @@ function App() {
             <Route path='/register' exact component={ CreateAccount }/>
             <Route path='/jobs' exact component={ JobSearch }/>
             <Route path='/post-a-job' exact component={ JobFormComponent }/>
-            <Route 
-              path='/dashboard' 
-              render = {props => (
-                <RouteLock 
-                  {...props} 
-                  Component={ Dashboard } 
-                  permissionCode={['P0001']}/>
-              )}/>
+            <RouteLock 
+              path='/dashboard'
+              redirect='./unauthorized'  
+              Component={ Dashboard } 
+              permissionCode={['P0001']}/>
             <Route path='/unauthorized' component={ Unauthorized }/>
             <Route path="/myChats" exact component={ ChatModule } />
             <Route path="/advertisements" component={Advertisements} />

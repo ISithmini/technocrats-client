@@ -4,60 +4,97 @@ $theme-text-light: adjust-hue($color: #ffffff, $degrees: 0) !important;
 $theme-text-dark: adjust-hue($color: #000000, $degrees: 0) !important;
 
 .CreateAccount {
-  
-  margin-top: 10em;
-  position: relative;
-  
-  left: 50% !important;
-  transform: translate(-50%,0%);
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 40px;
+  //background-color: var(--primaryColour);
+  box-sizing: border-box;
+  position: absolute;
+  width: calc(100% - 600px);
+  top: 50%;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  animation: fade-in 0.5s 1 ease-out;
+  //transform: rotate3d(1, 0, 1, 45deg);
+  //perspective: 800px;
+
+  @keyframes fade-in {
+    0% { 
+      opacity: 0;
+      transform: translate(-100%, -50%);
+      top: 50%; 
+      transform: rotateY(90deg);
+    }
+    100% { 
+      opacity: 1;
+      transform: translate(0%, -50%); 
+      top: 50%;
+    }
+  }
+
+  .reg-form-title {
+    //color: #fff;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+
+    .lable-gap {
+      height: 5px;
+      display: none;
+    }
+
+    .form-group-lable {
+      //color: #fff;
+      font-size: 1em;
+      padding-bottom: 10px !important;
+      font-weight: 600;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .reg-submit-btn {
+    margin-top: 40px;
+  }
 }
 
-.createAccountImg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  margin: auto;
+@media only screen and (max-width: 1400px) {
+  .CreateAccount {
+    margin-left: 100px;
+    margin-right: 100px;
+    width: calc(100% - 200px);
+  }
 }
 
-.registerText {
-  padding-top: 1em;
-  font-size: 2em;
-  font-family: Montserrat-SemiBold;
-  position: relative;
-  text-align: center;
+@media only screen and (max-width: 991px) {
+  .CreateAccount {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: calc(100% - 80px);
+  }
 }
 
-.formSection {
-  margin-top: 2em;
-}
+@media only screen and (max-width: 600px) {
+  .CreateAccount {
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+    margin-left: 5px;
+    margin-right: 5px;
+    width: calc(100% - 10px);
 
-div.react-tel-input {
-  float: left;
-  width: fit-content;
-  margin-bottom: 1em;
-  margin-right: 1em;
-}
-
-.locationInput {
- padding-left: 0 !important;
- padding-right: 0 !important;
- margin-top: 0em;
-}
-
-.SignUp-btn {
-  margin: auto;
-  width: 15em !important;
-  background-color: $theme-blue;
-  width: 8em;
-  font-family: Montserrat-SemiBold;
-  color: $theme-Light;
-  border-top: solid rgb(211, 207, 207) 0.5px !important;
-  border-bottom: solid rgb(211, 206, 206) 0.5px !important;
-}
-
-.passwordInputField {
-  margin-left: 0px !important;
-  float: left;
-  width: 45%;
+    .form-group {
+      grid-template-columns: 1fr;
+    }
+  }
 }

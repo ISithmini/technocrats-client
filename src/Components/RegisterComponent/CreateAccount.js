@@ -8,14 +8,9 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'
 import { signUp } from '../../api/userApi/userApi';
 import { AuthContext } from '../../context/AuthContext';
+import Button from '../Button/Button';
 
 const CreateAccount = () => {
-
-  const animprops1 = useSpring({
-    opacity: 1, transform: "translate3d(0%, 0 ,0)",  
-    from: {opacity: 0, transform: "translate3d(100%, 0 ,0)"}, 
-    config: config.slow
-  });
 
   const { dispatch } = useContext(AuthContext)
   const [name, setName] = useState('');
@@ -116,18 +111,16 @@ const CreateAccount = () => {
   }
 
   return (
-    <animated.div style={animprops1}>
+    <div >
 
-        <div className="col-lg-5 col-md-6 col-sm-10 CreateAccount" >
-
-        <img className="createAccountImg" src={createAccountImg} alt="providerImg"  />
-        <div className="registerText">Register</div>
-
+        <div className="CreateAccount" >
+        <div className="reg-form-title">Create Account</div>
           <div className="formSection">
-
             <form onSubmit={(e) => {handleSubmit(e)}}>
 
               <div className="form-group">
+                <lable className="form-group-lable">Name</lable>
+                <div className="lable-gap"></div>
                 <input 
                   className="form-control" 
                   required={true} name="name" id="name"
@@ -137,65 +130,83 @@ const CreateAccount = () => {
               </div>
 
               <div className="form-group">
+                <lable className="form-group-lable">Email Address</lable>
+                <div className="lable-gap"></div>
                 <input 
                   className="form-control" name="email" 
                   type="email" 
                   placeholder="Enter your email"
                   onChange={(e) => {setEmail(e.target.value)}}/>
+                  <div></div>
                   <div className=" alert-danger" >
                     { emailError }
                   </div>
               </div>
 
-              <PhoneInput 
-                country={'lk'} className="PhoneInput" 
-                onChange={value => setContactNo(value)}
-                  inputProps={{
-                      name: 'phone',
-                      required: true,
-              }}/>
-              <div className=" alert-danger" >
-                    { contactNoError }
-              </div>      
+              <div className="form-group">
+                <lable className="form-group-lable">Phone No.</lable>
+                <PhoneInput 
+                  country={'lk'} className="PhoneInput" 
+                  onChange={value => setContactNo(value)}
+                    inputProps={{
+                        name: 'phone',
+                        required: true,
+                }}/>
+                <div className=" alert-danger" >
+                      { contactNoError }
+                </div> 
+              </div>     
 
-              <div className="form-group col-lg-12 locationInput" style={{float: "left"}}>
+              <div className="form-group locationInput" style={{float: "left"}}>
+                <lable className="form-group-lable">Location</lable>
                 { locationInput() }
+                <div></div>
                 <div className=" alert-danger" >
                     { locationError }
                 </div> 
               </div>
 
-              <div className="form-group col-lg-6 col-md-10 col-sm-10 passwordInputField">
+              <div className="form-group passwordInputField">
+                <lable className="form-group-lable">Password</lable>
+                <div className="lable-gap"></div>
                 <input 
                   className="form-control" 
                   required={true}
                   name="password" type="password" 
                   placeholder="Enter a password"
                   onChange={(e) => {setPassword(e.target.value)}} />
+                  <div></div>
                   <div className=" alert-danger" >
                     { passwordError }
                 </div> 
               </div>
 
-              <div className="form-group col-lg-6 col-md-10 col-sm-10 passwordInputField">
+              <div className="form-group passwordInputField">
+                <div></div>
                 <input 
                   className="form-control" 
                   name="rePassword" type="password" 
                   placeholder="Re-enter password"
                   onChange={(e) => {setRePassword(e.target.value)}} />
+                  <div></div>
                   <div className=" alert-danger" >
                     { passwordMatch }
                   </div>
               </div>
 
-              <div className="form-group row"><button  className="btn SignUp-btn">Sign up</button></div>
+              <div className="reg-submit-btn">
+                <Button 
+                  buttonType='primary' 
+                  buttonSize="wide" 
+                  buttonColour='dark-blue'>Sign up</Button>
+              </div>
 
             </form>
 
           </div>
 
         </div>
-    </animated.div>
+    </div>
   )
 }
 
