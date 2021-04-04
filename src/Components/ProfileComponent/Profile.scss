@@ -1,11 +1,10 @@
-.myprofile-container {
-  padding-top: 20px;
+/////////////////// user modes ///////////////////
+.usermode-head-subtitle{
+  padding-top: 0 !important;
+  font-size: 0.6em !important;
 }
 
-.pro-switch-button {
-  text-align: center !important;
-}
-
+/////////////////////////////////////////////////
 .myprofile-content {
   display: grid;
   grid-template-columns: 30% 70%;
