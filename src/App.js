@@ -14,6 +14,7 @@ import Dashboard from './Containers/Dashboard';
 import Profile from './Components/ProfileComponent/Profile';
 import JobFormComponent from './Components/JobComponents/JobFormComponent/JobFormComponent';
 import ChatModule from './Components/ChatComponent/subcomponents/ChatModule'
+import Advertisements from './Components/AdvertisementComponent/Advertisements'
 
 function App() {
 
@@ -29,16 +30,14 @@ function App() {
             <Route path='/register' exact component={ CreateAccount }/>
             <Route path='/jobs' exact component={ JobSearch }/>
             <Route path='/post-a-job' exact component={ JobFormComponent }/>
-            <Route 
-              path='/dashboard' 
-              render = {props => (
-                <RouteLock 
-                  {...props} 
-                  Component={ Dashboard } 
-                  permissionCode={['P0001']}/>
-              )}/>
+            <RouteLock 
+              path='/dashboard'
+              redirect='./unauthorized'  
+              Component={ Dashboard } 
+              permissionCode={['P0001']}/>
             <Route path='/unauthorized' component={ Unauthorized }/>
             <Route path="/myChats" exact component={ ChatModule } />
+            <Route path="/advertisements" component={Advertisements} />
           </Switch>
         </AuthContextProvider>
         
