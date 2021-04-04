@@ -13,6 +13,7 @@ import OngoingAds from './OngoingAds';
 import FinishedAds from './FinishedAds';
 import DraftsAds from './DraftsAds';
 import Button from '../Button/Button'
+import { IoIosAddCircle } from "react-icons/io";
 import Testing from './Testing';
 
 
@@ -49,7 +50,7 @@ export default function Advertisements() {
                     <NavLink to="/advertisements/" exact className="sidebar-title" onClick={hideMenu}>
                         <div className="sidebar-content">
                             <div className="sidebar-icon">
-                                <AiOutlineProfile />
+                                <IoIosAddCircle/>
                             </div>
                             <div className="sidebar-title-txt">
                                 New
