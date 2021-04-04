@@ -14,6 +14,7 @@ import Dashboard from './Containers/Dashboard';
 import Profile from './Components/ProfileComponent/Profile';
 import JobFormComponent from './Components/JobComponents/JobFormComponent/JobFormComponent';
 import ChatModule from './Components/ChatComponent/subcomponents/ChatModule'
+import Advertisements from './Components/AdvertisementComponent/Advertisements'
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
               permissionCode={['P0001']}/>
             <Route path='/unauthorized' component={ Unauthorized }/>
             <Route path="/myChats" exact component={ ChatModule } />
+            <Route path="/advertisements" component={Advertisements} />
           </Switch>
         </AuthContextProvider>
         
