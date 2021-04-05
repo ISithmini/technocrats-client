@@ -12,6 +12,7 @@ import JobSearch from './Containers/JobSearch';
 import NavBarComponent from './Components/NavBarComponent/NavBarComponent';
 import Dashboard from './Containers/Dashboard';
 import Profile from './Components/ProfileComponent/Profile';
+import EditProfileComponent from './Components/EditProfileComponent/EditProfileComponent';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Switch> 
             <Route path='/' exact component={ Home }/>
             <Route path='/myprofile'  component={ Profile }/>
+            <Route path='/edit-profile'  component={ EditProfileComponent }/>
             <Route path='/login' exact component={ Login }/>
             <Route path='/register' exact component={ CreateAccount }/>
             <Route path='/jobs' exact component={ JobSearch }/>

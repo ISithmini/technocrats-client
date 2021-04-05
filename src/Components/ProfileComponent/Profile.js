@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import {React, useContext, useState} from 'react';
-=======
 import React, { useState, useContext, useEffect } from 'react';
->>>>>>> origin/main
 import './Profile.scss'
 import { RiAdvertisementLine } from 'react-icons/ri';
 import { MdCardMembership, MdFavoriteBorder } from 'react-icons/md';
@@ -130,7 +126,6 @@ export default function Profile() {
                                 
                             </div>
                         </NavLink>}
-
                         
                         {userType &&
                             <NavLink to="/myprofile/appliedjobs" exact className="sidebar-title" onClick={hideMenu}>
@@ -152,7 +147,11 @@ export default function Profile() {
                             <BasicInfo user={user}/>
                         </Route>
                         <Route path="/myprofile/myads"  exact component={MyAds} />
-                        <Route path="/myprofile/myfavourites"  exact component={MyFavourites} />
+
+                        <Route path="/myprofile/myfavourites"  exact>
+                            <MyFavourites user={user}/>
+                        </Route>
+                        
                         <Route path="/myprofile/mymembership"  exact component={MyMembership} />
                         <Route path="/myprofile/mychats"  exact component={MyChats} />
                         <Route path="/myprofile/myinvoices"  exact component={MyInvoices} />
