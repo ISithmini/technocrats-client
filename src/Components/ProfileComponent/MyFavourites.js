@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './MyFavourites.scss'
 import JobPreviewComponent from '../JobComponents/JobPreviewTileComponent/JobPreviewComponent'
+import { getSavedPosts } from '../../api/userApi/userApi';
 
-export default function MyFavourites() {
+const MyFavourites = ({
+    user
+}) => {
+    const [fevAds, setfevAds] = useState([]);
+    
+    useEffect(() => {
+        getSavedPosts({_id: user.id})
+        .then(res => {
+            console.log(res);
+        });
+    }, []);
     return (
         <div className="">
             {/* <h3 className="">My Favourites</h3> */}
@@ -17,3 +28,5 @@ export default function MyFavourites() {
         </div>
     )
 }
+
+export default MyFavourites

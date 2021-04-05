@@ -3,6 +3,7 @@ import React, { useState, useEffect} from 'react';
 import './BasicInfo.scss'
 import Axios from "axios";
 import { getUser } from '../../api/userApi/userApi';
+import { Link } from 'react-router-dom';
 
 const BasicInfo = ({
     user
@@ -30,6 +31,12 @@ const BasicInfo = ({
     return (
         <div className="basicinfo-container">
             <h3 className="basic-info-title">Basic Info</h3>
+
+            <div className="edit-pro-btn">
+                <Link to="/edit-profile">
+                    <Button>Edit profile</Button>
+                </Link>
+            </div>
             
             <div className="basic-info-content">
                 <div>

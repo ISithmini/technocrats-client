@@ -22,3 +22,16 @@ export const getUser = ({_id}) => {
     }
   });
 }
+
+export const getSavedPosts = ({_id}) => {
+    console.log(_id);
+    return api.get('/user/saved-posts', {
+      params: {
+        _id: _id,
+      }
+    });
+}
+
+export const editProfile = ({name, email, location,contactNo}) => {
+    return api.post('/user/editaccount', {name, email, location,contactNo})
+}
