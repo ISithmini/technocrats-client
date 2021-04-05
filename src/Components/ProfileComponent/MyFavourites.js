@@ -15,33 +15,14 @@ const MyFavourites = ({
         });
     }, []);
     return (
-        <div>
-            <div className="myads-container">
-                <h3 className="myads-info-title">My Favourites</h3>
-                <div className="mypro-fav-container">
-
-                {
-                    (fevAds == null) || (fevAds.length == 0)  ? <div className="mypro-favs-div"><p className="mypro-nofavs">No favourite posts to display</p></div>
-                    : 
-                    <div className="mypro-fav-content">
-                        {
-                            fevAds.map((data,index) =>{
-                                return (
-                                    <div key={index}>
-                                        <JobPreviewComponent
-                                            title={data.title}
-                                            description = {data.description}
-                                            budget = {data.budget}
-                                            duedate = {data.duedate}
-                                            level = {data.level}
-                                            rating = {data.rating}
-                                        />
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                }   
+        <div className="">
+            {/* <h3 className="">My Favourites</h3> */}
+            <div className="">
+                <div className="mypro-fav-content">
+                <JobPreviewComponent/>
+                <JobPreviewComponent/>
+                <JobPreviewComponent/>
+                <JobPreviewComponent/>
                 </div>
             </div>
         </div>

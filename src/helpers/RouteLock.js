@@ -1,8 +1,8 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Route } from 'react-router-dom'
 import { checkAccess } from './authentication'
 
-const RouteLock = ( { Component, permissionCode, path } ) => {
+const RouteLock = ( { Component, permissionCode, path, redirect } ) => {
   //console.log(checkAccess(permissionCode));
   let isAccessGranted = false;
   
@@ -12,9 +12,9 @@ const RouteLock = ( { Component, permissionCode, path } ) => {
     }
   });
   return isAccessGranted? (
-    <Component/>
+    <Route path={path}><Component/></Route>
   ) : (
-    <Redirect to={{ pathname: `/unauthorized` }} />
+    <Redirect to={{ pathname: `${redirect}` }} />
   )
 }
 

@@ -19,12 +19,13 @@ const BasicInfo = ({
       getUser({_id: user.id})
       .then(res => {
         let curruser = res.data.user
-          console.log(res);
+          console.log(curruser);
           setname(curruser.name);
           setemail(curruser.email);
           setlocation(curruser.location);
           settelNo(curruser.contactNo);
-      })  
+      })
+      .catch(err => console.log('error'))  
     }, []);
 
     return (
