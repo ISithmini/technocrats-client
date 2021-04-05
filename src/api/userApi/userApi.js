@@ -32,6 +32,6 @@ export const getSavedPosts = ({_id}) => {
     });
 }
 
-export const editProfile = ({name, email, location,contactNo}) => {
-    return api.post('/user/editaccount', {name, email, location,contactNo})
+export const editProfile = ({_id, name, email, location,contactNo}) => {
+    return api.patch('/user/editaccount', {_id, name, email, location,contactNo})
 }
