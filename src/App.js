@@ -15,6 +15,7 @@ import Profile from './Components/ProfileComponent/Profile';
 import JobFormComponent from './Components/JobComponents/JobFormComponent/JobFormComponent';
 import ChatModule from './Components/ChatComponent/subcomponents/ChatModule'
 import Advertisements from './Components/AdvertisementComponent/Advertisements'
+import EditProfileComponent from './Components/EditProfileComponent/EditProfileComponent';
 
 function App() {
 
