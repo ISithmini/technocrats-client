@@ -18,10 +18,6 @@ const EditProfileComponent = () => {
     const [isPending, setIsPending] = useState(true);
     const [modal, setModal] = useState("true");
 
-
-
-
-
     const handleSubmit = (e) => {
         e.preventDefault()
         editProfile({_id: user.id, name,email,location, phonenum})

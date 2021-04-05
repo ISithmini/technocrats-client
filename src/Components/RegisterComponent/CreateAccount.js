@@ -19,7 +19,6 @@ const CreateAccount = () => {
   const [location, setLocation] = useState('');
   const [password, setPassword] = useState('');
   const [rePassword, setRePassword] = useState('');
-
   const [passwordMatch, setPasswordMatch] = useState('');
   const [emailError, setEmailError] = useState('');
   const [contactNoError, setContactNoError] = useState('')
@@ -152,6 +151,7 @@ const CreateAccount = () => {
                         name: 'phone',
                         required: true,
                 }}/>
+                
                 <div className=" alert-danger" >
                       { contactNoError }
                 </div> 
