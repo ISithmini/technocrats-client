@@ -1,6 +1,5 @@
 import React from 'react';
 import Home from './Containers/Home';
-//import Navbar from './Components/Navbar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Components/LoginComponent/Login';
 import AuthContextProvider from './context/AuthContext';
@@ -18,7 +17,7 @@ import Advertisements from './Components/AdvertisementComponent/Advertisements'
 import EditProfileComponent from './Components/EditProfileComponent/EditProfileComponent';
 
 function App() {
-
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -41,8 +40,7 @@ function App() {
             <Route path="/myChats" exact component={ ChatModule } />
             <Route path="/advertisements" component={Advertisements} />
           </Switch>
-        </AuthContextProvider>
-        
+        </AuthContextProvider>  
       </BrowserRouter>
     </div>
   );

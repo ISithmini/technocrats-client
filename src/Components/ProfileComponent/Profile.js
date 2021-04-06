@@ -27,7 +27,7 @@ import { BsBriefcaseFill } from "react-icons/bs";
 import { AiFillFileText } from "react-icons/ai";
 
 import BasicInfo from "./BasicInfo";
-import { NavLink, Route } from "react-router-dom";
+import { Link, NavLink, Route } from "react-router-dom";
 import MyAds from "./MyAds";
 import MyMembership from "./MyMembership";
 import MyChats from "./MyChats";
@@ -177,11 +177,13 @@ export default function Profile() {
                   data-target="#products"
                   className="collapsed sidenavbar-tabs"
                 >
+                <Link to="/myprofile/postedjobs">
                     <span>
                       <BsBriefcaseFill />
                     </span>
                     &nbsp;
                     <span className="	d-none d-sm-inline">Posted Jobs</span>{" "}
+                </Link>
                 </li>
 
                 <ul class="sub-menu collapse" id="products">
@@ -301,12 +303,14 @@ export default function Profile() {
                 </NavLink>
 
                 <li data-toggle="collapse" data-target="#new" className="collapsed sidenavbar-tabs">
-                    <span>
-                      <RiAdvertisementFill />
-                    </span>
-                    &nbsp;
-                    <span className="d-none d-sm-inline">Advertise </span>
-                    <span class="arrow"></span>
+                    <Link to="/myprofile/advertisements/newads">
+                        <span>
+                        <RiAdvertisementFill />
+                        </span>
+                        &nbsp;
+                        <span className="d-none d-sm-inline">Advertise </span>
+                        <span class="arrow"></span>
+                    </Link>
                 </li>
 
                 <ul class="sub-menu collapse" id="new">
@@ -405,6 +409,7 @@ export default function Profile() {
             exact
             component={MyMembership}
           />
+          <Route path="/myprofile/advertisements/newads" exact component={NewAds} />
           <Route path="/myprofile/mychats" exact component={MyChats} />
           <Route path="/myprofile/myinvoices" exact component={MyInvoices} />
           <Route path="/myprofile/postedjobs" exact component={PostedJobs} />
