@@ -9,10 +9,11 @@ import './NavBarComponent.css';
 import Button from '../Button/Button';
 import { AiFillMessage } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-import { AiFillBell } from "react-icons/ai";
 import Popover from 'react-bootstrap/Popover';
 import Overlay from 'react-bootstrap/Overlay';
 import NotificationModal from '../NotificationComponent/NotificationModal';
+import { MdNotifications, MdNotificationsActive} from "react-icons/md";
+import { Badge } from 'reactstrap';
 
 const NavBarComponent = () => {
   const { user, dispatch } = useContext(AuthContext);
@@ -129,8 +130,8 @@ const NavBarComponent = () => {
       return (
         <li className="menu-item" onClick={closeMobileMenu}>
           <div ref={ref}>
-            <Link className="nav-menu-link" to="/" onClick={notificationClick}>
-              <AiFillBell />
+            <Link className="nav-menu-link" onClick={notificationClick}>
+            <MdNotificationsActive/> <Badge className="badge" color="danger">4</Badge>
             </Link>
             {show && (
               <Overlay
@@ -138,7 +139,7 @@ const NavBarComponent = () => {
                 target={target}
                 placement="bottom"
                 container={ref.current}
-                containerPadding={20}
+                containerPadding={30}
               >
                 <Popover id="popover-contained">
                   <Popover.Title as="h2" className="notifications-title">

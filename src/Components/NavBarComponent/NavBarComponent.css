@@ -158,9 +158,13 @@
 }
 
 
-.notifications-title{
-  color: #1a3657 !important;
-  font-weight: bolder !important;
-  font-size: 15pt;
+
+.popover {
+  max-width:400px !important;
+  height: 500px;
+  overflow-y: auto;
+  white-space:pre-wrap;
 
 }
+
+
